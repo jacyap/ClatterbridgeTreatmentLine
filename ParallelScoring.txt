@@ -1,0 +1,42 @@
+##################################
+##  Scoring in ParallelWorld    ##
+##  Written by J Yap 2019       ##
+##################################
+
+#-- ParallelWorld --#
+#!! Have to turn it off to score in the mass world and if scoring in parallel, scores nothing in mass world
+#b:Ge/TransverseProfileGeo/Include      = "False"
+#b:Ge/TransverseProfileGeo/Invisible    = "True" 
+#b:Sc/TransverseProfilePS/Active        = "False"
+
+#-- TransverseProfile Phase Space --#
+s:Sc/TransverseProfilePS/Quantity                    = "PhaseSpace"
+s:Sc/TransverseProfilePS/Component                   = "TransverseProfileGeo"
+s:Sc/TransverseProfilePS/OutputToConsole             = "False"
+s:Sc/TransverseProfilePS/Surface                     = "TransverseProfileGeo/ZMinusSurface"
+s:Sc/TransverseProfilePS/OutputType                  = "ASCII" 
+s:Sc/TransverseProfilePS/OutputFile                  = "TransverseProfilePhaseSpace"
+i:Sc/TransverseProfilePS/OutputBufferSize            = 1000
+s:Sc/TransverseProfilePS/OnlyIncludeParticlesGoing   = "In"
+s:Sc/TransverseProfilePS/IfOutputFileAlreadyExists   = "Overwrite"
+
+#~~~~~~~~~~~~~~~~~~#
+# Geometry         #
+#~~~~~~~~~~~~~~~~~~#
+
+#-- PhaseSpace at transverse profile --#
+b:Ge/TransverseProfileGeo/IsParallel = "True"
+s:Ge/TransverseProfileGeo/ParallelWorldName = "ParallelWorld"
+
+s:Ge/TransverseProfileGeo/Type     = "TsBox"
+s:Ge/TransverseProfileGeo/Parent   = "Room"
+#s:Ge/TransverseProfileGeo/Material = "Air"
+d:Ge/TransverseProfileGeo/HLX      = 20.0 mm
+d:Ge/TransverseProfileGeo/HLY      = 20.0 mm
+d:Ge/TransverseProfileGeo/HLZ      = 1.0 um
+d:Ge/TransverseProfileGeo/TransZ   = 1838.4 mm #1774.0 mm
+s:Ge/TransverseProfileGeo/Color    = "lime"
+s:Ge/TransverseProfileGeo/DrawingStyle = "Solid"
+i:Ge/TransverseProfileGeo/XBins = 1
+i:Ge/TransverseProfileGeo/YBins = 1
+i:Ge/TransverseProfileGeo/ZBins = 1

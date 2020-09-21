@@ -1,0 +1,181 @@
+##################################
+##  Scoring                     ##
+##  Written by J Yap 2020       ##
+##################################
+
+#includeFile = ParallelScoring.txt
+#includeFile = FilmScoring.txt
+#includeFile = TimeModulation.txt
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# Turn off geometry easily #
+#~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
+#b:Ge/Phantom/Include   = "False"
+#b:Ge/Phantom/Invisible = "True" 
+
+#b:Ge/PhaseSpaceNozzle/Include    = "False"
+#b:Ge/PhaseSpaceNozzle/Invisible = "True" 
+
+b:Ge/PhaseSpaceZ/Include = "False" 
+b:Ge/PhaseSpaceZ/Invisible = "True" 
+
+#-- ParallelWorld --#
+#!! Have to turn it off to score in the mass world and otherwise scores nothing in mass world
+b:Ge/ParallelWorld/Include = "False"
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# Turn off scorers easily  #
+#~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
+#b:Sc/DoseProfile/Active                   = "False"
+#b:Sc/LETdProfile/Active                   = "False"
+#b:Sc/LETtProfile/Active                   = "False"
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# Scorers                  #
+#~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
+#b:Sc/CheckHits/Active                   = "True" # To quickly check if there's hits
+#s:Sc/CheckHits/Quantity                  = "Fluence"
+#s:Sc/CheckHits/Component                 = "PhaseSpaceNozzle"
+#b:Sc/CheckHits/OutputToConsole           = "TRUE"
+#b:Sc/CheckHits/OutputAfterRun            = "FALSE" 
+#s:Sc/CheckHits/IfOutputFileAlreadyExists = "Overwrite"
+
+s:Sc/PhaseNozzle/Quantity                    = "PhaseSpace"
+b:Sc/PhaseNozzle/OutputToConsole             = "False"
+s:Sc/PhaseNozzle/Surface                     = "PhaseSpaceNozzle/ZMinusSurface"
+s:Sc/PhaseNozzle/OutputType                  = "ASCII"
+s:Sc/PhaseNozzle/OutputFile                  = "Data/DoseComparisons/PhaseSpaceNozzle"
+i:Sc/PhaseNozzle/OutputBufferSize            = 10000
+s:Sc/PhaseNozzle/IfOutputFileAlreadyExists   = "Overwrite"
+s:Sc/PhaseNozzle/OnlyIncludeParticlesGoing   = "In"
+sv:Sc/PhaseNozzle/OnlyIncludeParticlesNamed = 1 "Proton"
+
+s:Sc/DoseProfile/Quantity                  = "DoseToWater"
+s:Sc/DoseProfile/Component                 = "Phantom"
+s:Sc/DoseProfile/OutputFile                = "Data/DoseComparisons/DoseInWaterPhantom"
+s:Sc/DoseProfile/OutputType                = "csv"
+b:Sc/DoseProfile/OutputToConsole           = "False"
+s:Sc/DoseProfile/IfOutputFileAlreadyExists = "Overwrite"
+
+s:Sc/LETdProfile/Quantity                         = "ProtonLET"
+s:Sc/LETdProfile/Component                        = "Phantom"
+s:Sc/LETdProfile/WeightBy                         = "Dose"
+d:Sc/LETdProfile/MaxScoredLET                     = 100 MeV/mm/(g/cm3) 
+d:Sc/LETdProfile/UseFluenceWeightedBelowDensity   = 0. g/cm3
+b:Sc/LETdProfile/OutputToConsole                  = "False"
+s:Sc/LETdProfile/OutputFile                       = "Data/DoseComparisons/LETdProfile"
+s:Sc/LETdProfile/OutputType                       = "csv"
+s:Sc/LETdProfile/IfOutputFileAlreadyExists        = "Overwrite"
+b:Sc/LETdProfile/PreCalculateStoppingPowerRatios  = "True" 
+
+s:Sc/LETtProfile/Quantity                         = "ProtonLET"
+s:Sc/LETtProfile/Component                        = "Phantom"
+s:Sc/LETtProfile/WeightBy                         = "Track" 
+b:Sc/LETtProfile/OutputToConsole                  = "False"
+s:Sc/LETtProfile/OutputFile                       = "Data/DoseComparisons/LETtProfile"
+s:Sc/LETtProfile/OutputType                       = "csv"
+s:Sc/LETtProfile/IfOutputFileAlreadyExists        = "Overwrite"
+b:Sc/LETtProfile/PreCalculateStoppingPowerRatios  = "True" 
+
+#~~~~~~~~~~~~~~~~~~#
+# Geometry         #
+#~~~~~~~~~~~~~~~~~~#
+
+#-- Phantom, cube after nozzle --#
+#b:Ge/Phantom/IsParallel = "True" # if scoring in parallel, need to add component to LayeredMassGeometryWorlds
+s:Ge/Phantom/Type         = "TsBox"
+s:Ge/Phantom/Parent       = "DeliveryBLineBox"
+s:Ge/Phantom/Material     = "G4_WATER" #"G4_SILICON_DIOXIDE" #"G4_WATER" #"Air" 
+d:Ge/Phantom/HLX          = 20.0 mm
+d:Ge/Phantom/HLY          = 20.0 mm
+d:Ge/Phantom/HLZ          = 20.0 mm
+d:Ge/Phantom/TransZ       = 1863.4 mm 
+s:Ge/Phantom/Color        = "lightblue"
+s:Ge/Phantom/DrawingStyle = "Wireframe"
+i:Ge/Phantom/XBins        = 1
+i:Ge/Phantom/YBins        = 1
+i:Ge/Phantom/ZBins        = 400
+
+#-- Phase Space after nozzle --#
+s:Ge/PhaseSpaceNozzle/Type          = "TsBox"
+s:Ge/PhaseSpaceNozzle/Parent        = "DeliveryBLineBox"
+s:Ge/PhaseSpaceNozzle/Material      = "Air"
+d:Ge/PhaseSpaceNozzle/HLX           = 40.0 mm
+d:Ge/PhaseSpaceNozzle/HLY           = 40.0 mm
+d:Ge/PhaseSpaceNozzle/HLZ           = 1.0 um
+d:Ge/PhaseSpaceNozzle/TransZ        = 1773.4 mm #1769.0 mm # right after cap is 1773.4 mm
+s:Ge/PhaseSpaceNozzle/Color         = "purple"
+s:Ge/PhaseSpaceNozzle/DrawingStyle  = "Solid"
+i:Ge/PhaseSpaceNozzle/XBins         = 800
+i:Ge/PhaseSpaceNozzle/YBins         = 800   
+i:Ge/PhaseSpaceNozzle/ZBins         = 1
+
+#-- Phase Space at Z --#
+s:Sc/PhaseSpaceAtZ/Quantity                    = "SurfaceTrackCount" #"PhaseSpace"
+b:Sc/PhaseSpaceAtZ/OutputToConsole             = "False"
+s:Sc/PhaseSpaceAtZ/Surface                     = "PhaseSpaceZ/ZMinusSurface"
+s:Sc/PhaseSpaceAtZ/OutputType                  = "csv" #"ASCII" 
+s:Sc/PhaseSpaceAtZ/OutputFile                  = "Data/Film/PhaseSpaceAtZoutput"
+i:Sc/PhaseSpaceAtZ/OutputBufferSize            = 10000
+b:Sc/PhaseSpaceAtZ/IncludeParentID             = "True"
+#sv:Sc/PhaseSpaceAtZ/OnlyIncludeParticlesNamed = 1 "Proton"
+s:Sc/PhaseSpaceAtZ/IfOutputFileAlreadyExists   = "Overwrite"
+s:Sc/PhaseSpaceAtZ/OnlyIncludeParticlesGoing   = "In"
+
+#-- Dose at Z --#
+#s:Sc/DoseInZ/Quantity                  = "DoseToMedium"
+#s:Sc/DoseInZ/Component                 = "PhaseSpaceZ"
+#s:Sc/DoseInZ/OutputFile                = "DoseInZoutput"
+#s:Sc/DoseInZ/OutputType                = "csv"
+#b:Sc/DoseInZ/OutputToConsole           = "False"
+#s:Sc/DoseInZ/IfOutputFileAlreadyExists = "Overwrite"
+#sc:Sc/DoseInZ/EBinEnergy               = "IncidentTrack"
+
+#~~~~~~~~~~~~~~~~~~#
+# Geometry         #
+#~~~~~~~~~~~~~~~~~~#
+
+#-- Phantom, cube after nozzle --#
+s:Ge/Phantom/Type         = "TsBox"
+s:Ge/Phantom/Parent       = "DeliveryBLineBox"
+s:Ge/Phantom/Material     = "G4_WATER" #"Air" # #"Air" #
+d:Ge/Phantom/HLX          = 20.0 mm
+d:Ge/Phantom/HLY          = 20.0 mm
+d:Ge/Phantom/HLZ          = 20.0 mm
+d:Ge/Phantom/TransZ       = 1863.4 mm
+s:Ge/Phantom/Color        = "navy"
+s:Ge/Phantom/DrawingStyle = "Wireframe"
+i:Ge/Phantom/XBins        = 1
+i:Ge/Phantom/YBins        = 1
+i:Ge/Phantom/ZBins        = 400
+
+#-- Phase Space after nozzle --#
+s:Ge/PhaseSpaceNozzle/Type          = "TsBox"
+s:Ge/PhaseSpaceNozzle/Parent        = "DeliveryBLineBox"
+s:Ge/PhaseSpaceNozzle/Material      = "Air"
+d:Ge/PhaseSpaceNozzle/HLX           = 20.0 mm
+d:Ge/PhaseSpaceNozzle/HLY           = 20.0 mm
+d:Ge/PhaseSpaceNozzle/HLZ           = 1.0 um
+d:Ge/PhaseSpaceNozzle/TransZ        = 2100 mm #1769.0 mm # right after cap is 1773.4 mm
+s:Ge/PhaseSpaceNozzle/Color         = "red"
+s:Ge/PhaseSpaceNozzle/DrawingStyle  = "Wireframe"
+i:Ge/PhaseSpaceNozzle/RBins         = 1
+i:Ge/PhaseSpaceNozzle/PhiBins       = 1
+i:Ge/PhaseSpaceNozzle/ZBins         = 1
+
+#-- Phase Space at Z --#
+s:Ge/PhaseSpaceZ/Type          = "TsBox"
+s:Ge/PhaseSpaceZ/Parent        = "DeliveryBLineBox"
+s:Ge/PhaseSpaceZ/Material      = "LiPCD" #"Lucite"
+d:Ge/PhaseSpaceZ/HLX          = 20.0 mm
+d:Ge/PhaseSpaceZ/HLY          = 20.0 mm
+d:Ge/PhaseSpaceZ/HLZ          = 14.0 um # EBT3, 27 um sensitive volume, 287 um total
+d:Ge/PhaseSpaceZ/TransZ        =  2069 mm #1769 mm #1884 mm
+s:Ge/PhaseSpaceZ/Color         = "pink"
+s:Ge/PhaseSpaceZ/DrawingStyle  = "Solid"
+i:Ge/PhaseSpaceZ/XBins         = 400
+i:Ge/PhaseSpaceZ/YBins         = 1
+i:Ge/PhaseSpaceZ/ZBins         = 1

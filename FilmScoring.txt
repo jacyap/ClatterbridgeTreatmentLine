@@ -1,0 +1,223 @@
+##################################
+##  Film Scoring                ##
+##  Written by J Yap 2020       ##
+##################################
+
+#b:Sc/FluxF1/Active               = "False"
+#b:Sc/FluxF2/Active               = "False"
+#b:Sc/FluxF3/Active               = "False"
+#b:Sc/FluxF6/Active               = "False"
+#b:Sc/FluxF4/Active               = "False"
+#b:Sc/FluxF8/Active               = "False"
+#b:Sc/FluxF5/Active               = "False"
+#b:Sc/FluxF7/Active               = "False"
+
+#b:Ge/F1/Include = "False" 
+#b:Ge/F1/Invisible = "True" 
+#b:Ge/F2/Include = "False" 
+#b:Ge/F2/Invisible = "True" 
+#b:Ge/F3/Include = "False" 
+#b:Ge/F3/Invisible = "True" 
+#b:Ge/F6/Include = "False" 
+#b:Ge/F6/Invisible = "True" 
+#b:Ge/F4/Include = "False" 
+#b:Ge/F4/Invisible = "True" 
+#b:Ge/F8/Include = "False" 
+#b:Ge/F8/Invisible = "True" 
+#b:Ge/F5/Include = "False" 
+#b:Ge/F5/Invisible = "True" 
+#b:Ge/F7/Include = "False" 
+#b:Ge/F7/Invisible = "True" 
+
+####################
+#-- Dose at Flim --#
+####################
+
+s:Sc/FluxF1/Quantity                    = "DoseToMedium" #"PhaseSpace"
+b:Sc/FluxF1/OutputToConsole             = "False"
+s:Sc/FluxF1/Component                     = "F1"
+s:Sc/FluxF1/OutputType                  = "csv"
+s:Sc/FluxF1/OutputFile                  = "Data/Film/F1"
+i:Sc/FluxF1/OutputBufferSize            = 10000
+s:Sc/FluxF1/IfOutputFileAlreadyExists   = "Overwrite"
+#s:Sc/FluxF1/OnlyIncludeParticlesGoing   = "In"
+#sv:Sc/FluxF1/OnlyIncludeParticlesNamed = 1 "Proton"
+
+s:Sc/FluxF2/Quantity                    = "DoseToMedium" #"PhaseSpace"
+b:Sc/FluxF2/OutputToConsole             = "False"
+s:Sc/FluxF2/Component                     = "F2"
+s:Sc/FluxF2/OutputType                  = "csv"
+s:Sc/FluxF2/OutputFile                  = "Data/Film/F2"
+i:Sc/FluxF2/OutputBufferSize            = 10000
+s:Sc/FluxF2/IfOutputFileAlreadyExists   = "Overwrite"
+#s:Sc/FluxF2/OnlyIncludeParticlesGoing   = "In"
+#sv:Sc/FluxF2/OnlyIncludeParticlesNamed = 1 "Proton"
+
+s:Sc/FluxF3/Quantity                    = "DoseToMedium" #"PhaseSpace"
+b:Sc/FluxF3/OutputToConsole             = "False"
+s:Sc/FluxF3/Component                     = "F3"
+s:Sc/FluxF3/OutputType                  = "csv"
+s:Sc/FluxF3/OutputFile                  = "Data/Film/F3"
+i:Sc/FluxF3/OutputBufferSize            = 10000
+s:Sc/FluxF3/IfOutputFileAlreadyExists   = "Overwrite"
+#s:Sc/FluxF3/OnlyIncludeParticlesGoing   = "In"
+#sv:Sc/FluxF3/OnlyIncludeParticlesNamed = 1 "Proton"
+
+s:Sc/FluxF6/Quantity                    = "DoseToMedium" #"PhaseSpace"
+b:Sc/FluxF6/OutputToConsole             = "False"
+s:Sc/FluxF6/Component                     = "F6"
+s:Sc/FluxF6/OutputType                  = "csv"
+s:Sc/FluxF6/OutputFile                  = "Data/Film/F6"
+i:Sc/FluxF6/OutputBufferSize            = 10000
+s:Sc/FluxF6/IfOutputFileAlreadyExists   = "Overwrite"
+#s:Sc/FluxF6/OnlyIncludeParticlesGoing   = "In"
+#sv:Sc/FluxF6/OnlyIncludeParticlesNamed = 1 "Proton"
+
+s:Sc/FluxF4/Quantity                    = "DoseToMedium" #"PhaseSpace"
+b:Sc/FluxF4/OutputToConsole             = "False"
+s:Sc/FluxF4/Component                     = "F4"
+s:Sc/FluxF4/OutputType                  = "csv"
+s:Sc/FluxF4/OutputFile                  = "Data/Film/F4"
+i:Sc/FluxF4/OutputBufferSize            = 10000
+s:Sc/FluxF4/IfOutputFileAlreadyExists   = "Overwrite"
+#s:Sc/FluxF4/OnlyIncludeParticlesGoing   = "In"
+#sv:Sc/FluxF4/OnlyIncludeParticlesNamed = 1 "Proton"
+
+s:Sc/FluxF8/Quantity                    = "DoseToMedium" #"PhaseSpace"
+b:Sc/FluxF8/OutputToConsole             = "False"
+s:Sc/FluxF8/Component                     = "F8"
+s:Sc/FluxF8/OutputType                  = "csv"
+s:Sc/FluxF8/OutputFile                  = "Data/Film/F8"
+i:Sc/FluxF8/OutputBufferSize            = 10000
+s:Sc/FluxF8/IfOutputFileAlreadyExists   = "Overwrite"
+#s:Sc/FluxF8/OnlyIncludeParticlesGoing   = "In"
+#sv:Sc/FluxF8/OnlyIncludeParticlesNamed = 1 "Proton"
+
+s:Sc/FluxF5/Quantity                    = "DoseToMedium" #"PhaseSpace"
+b:Sc/FluxF5/OutputToConsole             = "False"
+s:Sc/FluxF5/Component                     = "F5"
+s:Sc/FluxF5/OutputType                  = "csv"
+s:Sc/FluxF5/OutputFile                  = "Data/Film/F5"
+i:Sc/FluxF5/OutputBufferSize            = 10000
+s:Sc/FluxF5/IfOutputFileAlreadyExists   = "Overwrite"
+#s:Sc/FluxF5/OnlyIncludeParticlesGoing   = "In"
+#sv:Sc/FluxF5/OnlyIncludeParticlesNamed = 1 "Proton"
+
+s:Sc/FluxF7/Quantity                    = "DoseToMedium" #"PhaseSpace"
+b:Sc/FluxF7/OutputToConsole             = "False"
+s:Sc/FluxF7/Component                     = "F7"
+s:Sc/FluxF7/OutputType                  = "csv"
+s:Sc/FluxF7/OutputFile                  = "Data/Film/F7"
+i:Sc/FluxF7/OutputBufferSize            = 10000
+s:Sc/FluxF7/IfOutputFileAlreadyExists   = "Overwrite"
+#s:Sc/FluxF7/OnlyIncludeParticlesGoing   = "In"
+#sv:Sc/FluxF7/OnlyIncludeParticlesNamed = 1 "Proton"
+
+#~~~~~~~~~~~~~~~~~~#
+# Geometry         #
+#~~~~~~~~~~~~~~~~~~#
+#-- FILM --#
+
+s:Ge/F1/Type          = "TsBox"
+s:Ge/F1/Parent        = "DeliveryBLineBox"
+s:Ge/F1/Material      = "LiPCD" 
+d:Ge/F1/HLX          = 40.0 mm
+d:Ge/F1/HLY          = 40.0 mm
+d:Ge/F1/HLZ          = 14.0 um 
+d:Ge/F1/TransZ        =  363.0 mm
+s:Ge/F1/Color         = "red"
+s:Ge/F1/DrawingStyle  = "Solid"
+i:Ge/F1/XBins         = 1
+i:Ge/F1/YBins         = 800
+i:Ge/F1/ZBins         = 1
+
+s:Ge/F2/Type          = "TsBox"
+s:Ge/F2/Parent        = "DeliveryBLineBox"
+s:Ge/F2/Material      = "LiPCD" 
+d:Ge/F2/HLX          = 40.0 mm
+d:Ge/F2/HLY          = 40.0 mm
+d:Ge/F2/HLZ          = 14.0 um 
+d:Ge/F2/TransZ        = 452 mm 
+s:Ge/F2/Color         = "red"
+s:Ge/F2/DrawingStyle  = "Solid"
+i:Ge/F2/XBins         = 800
+i:Ge/F2/YBins         = 1
+i:Ge/F2/ZBins         = 1
+
+s:Ge/F3/Type          = "TsBox"
+s:Ge/F3/Parent        = "DeliveryBLineBox"
+s:Ge/F3/Material      = "LiPCD" 
+d:Ge/F3/HLX          = 40.0 mm
+d:Ge/F3/HLY          = 40.0 mm
+d:Ge/F3/HLZ          = 14.0 um 
+d:Ge/F3/TransZ        = 657 mm
+s:Ge/F3/Color         = "red"
+s:Ge/F3/DrawingStyle  = "Solid"
+i:Ge/F3/XBins         = 800
+i:Ge/F3/YBins         = 1
+i:Ge/F3/ZBins         = 1
+
+s:Ge/F6/Type          = "TsBox"
+s:Ge/F6/Parent        = "DeliveryBLineBox"
+s:Ge/F6/Material      = "LiPCD" 
+d:Ge/F6/HLX          = 40.0 mm
+d:Ge/F6/HLY          = 40.0 mm
+d:Ge/F6/HLZ          = 14.0 um 
+d:Ge/F6/TransZ        = 827 mm
+s:Ge/F6/Color         = "red"
+s:Ge/F6/DrawingStyle  = "Solid"
+i:Ge/F6/XBins         = 800
+i:Ge/F6/YBins         = 1
+i:Ge/F6/ZBins         = 1
+
+s:Ge/F4/Type          = "TsBox"
+s:Ge/F4/Parent        = "DeliveryBLineBox"
+s:Ge/F4/Material      = "LiPCD" 
+d:Ge/F4/HLX          = 40.0 mm
+d:Ge/F4/HLY          = 40.0 mm
+d:Ge/F4/HLZ          = 14.0 um 
+d:Ge/F4/TransZ        = 1060.9 mm
+s:Ge/F4/Color         = "red"
+s:Ge/F4/DrawingStyle  = "Solid"
+i:Ge/F4/XBins         = 800
+i:Ge/F4/YBins         = 1
+i:Ge/F4/ZBins         = 1
+
+s:Ge/F8/Type          = "TsBox"
+s:Ge/F8/Parent        = "DeliveryBLineBox"
+s:Ge/F8/Material      = "LiPCD" 
+d:Ge/F8/HLX          = 40.0 mm
+d:Ge/F8/HLY          = 40.0 mm
+d:Ge/F8/HLZ          = 14.0 um 
+d:Ge/F8/TransZ        = 1422.4 mm
+s:Ge/F8/Color         = "red"
+s:Ge/F8/DrawingStyle  = "Solid"
+i:Ge/F8/XBins         = 800
+i:Ge/F8/YBins         = 1
+i:Ge/F8/ZBins         = 1
+
+s:Ge/F5/Type          = "TsBox"
+s:Ge/F5/Parent        = "DeliveryBLineBox"
+s:Ge/F5/Material      = "LiPCD" 
+d:Ge/F5/HLX          = 40.0 mm
+d:Ge/F5/HLY          = 40.0 mm
+d:Ge/F5/HLZ          = 14.0 um 
+d:Ge/F5/TransZ        = 1677.0 mm
+s:Ge/F5/Color         = "red"
+s:Ge/F5/DrawingStyle  = "Solid"
+i:Ge/F5/XBins         = 800
+i:Ge/F5/YBins         = 1
+i:Ge/F5/ZBins         = 1
+
+s:Ge/F7/Type          = "TsBox"
+s:Ge/F7/Parent        = "DeliveryBLineBox"
+s:Ge/F7/Material      = "LiPCD" 
+d:Ge/F7/HLX          = 40.0 mm
+d:Ge/F7/HLY          = 40.0 mm
+d:Ge/F7/HLZ          = 14.0 um 
+d:Ge/F7/TransZ        = 1838.4 mm
+s:Ge/F7/Color         = "red"
+s:Ge/F7/DrawingStyle  = "Solid"
+i:Ge/F7/XBins         = 800
+i:Ge/F7/YBins         = 1
+i:Ge/F7/ZBins         = 1
