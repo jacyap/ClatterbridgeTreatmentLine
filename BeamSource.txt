@@ -1,0 +1,87 @@
+##################################
+##  Input beam                  ##
+##  Written by J Yap 2019       ##
+##################################
+
+includeFile = Geometry/Geometry.txt
+
+#b:Sc/Beam/Active                         = "False"
+b:Sc/BeamSourceTwiss/Active                         = "False"
+
+s:So/BeamSource/Type                     = "Beam"
+s:So/BeamSource/Component                = "BeamPosition"
+s:So/BeamSource/BeamParticle             = "proton"
+d:So/BeamSource/BeamEnergy               = 62.2 MeV
+u:So/BeamSource/BeamEnergySpread         = 0.53
+s:So/BeamSource/BeamPositionDistribution = "Gaussian"
+s:So/BeamSource/BeamPositionCutoffShape  = "Ellipse"
+d:So/BeamSource/BeamPositionCutoffX      = 6.89 mm #4.0 mm
+d:So/BeamSource/BeamPositionCutoffY      = 2.14 mm #4.5 mm
+d:So/BeamSource/BeamPositionSpreadX      = 0.6 mm
+d:So/BeamSource/BeamPositionSpreadY      = 0.2 mm
+s:So/BeamSource/BeamAngularDistribution  = "Gaussian"
+d:So/BeamSource/BeamAngularCutoffX       = 2.3 mrad
+d:So/BeamSource/BeamAngularCutoffY       = 1.2 mrad
+d:So/BeamSource/BeamAngularSpreadX       = 0.002 mrad #2.3 mrad
+d:So/BeamSource/BeamAngularSpreadY       = 0.001 mrad #1.2 mrad
+
+## TWISS ## !! Need to switch i:So/ for histories in Run.txt to use Twiss Parameters
+s:So/BeamSourceTwiss/Distribution = "twiss_gaussian"
+u:So/BeamSourceTwiss/AlphaX = 5.29402
+d:So/BeamSourceTwiss/BetaX  = 48.73517 m
+d:So/BeamSourceTwiss/EmittanceX = 0.00005 mm # we don’t multiply pi intrinsically.
+u:So/BeamSourceTwiss/AlphaY = -6.14021
+d:So/BeamSourceTwiss/BetaY = 13.48019 m
+d:So/BeamSourceTwiss/EmittanceY = 0.00001 mm
+u:So/BeamSourceTwiss/ParticleFractionX = 0.683 ## 1 sigma RMS
+u:So/BeamSourceTwiss/ParticleFractionY = 0.683
+
+#sv:Ph/Default/Modules = 1 "g4em-standard_opt0" 
+sv:Ph/Default/Modules = 2 "g4em-standard_opt3" "g4h-phy_QGSP_BIC_HP" #"g4em-standard_opt0"
+##s:Ph/Default/Type = "QGSP_BIC_HP" #"QGSP_BERT_HP" #"QGSP_BIC_EMY" 
+#d:Ph/Default/CutForAllParticles = 0.05 mm
+d:Ph/Default/CutForElectron = 0.01 mm 
+d:Ph/Default/CutForProton = 0.01 mm 
+d:Ph/Default/CutForGamma = 0.1 mm
+d:Ph/Default/CutForPositron = 0.1 mm
+#b:Ph/ListProcesses = "True"
+
+#--- Constants --#
+s:Ge/BeamPosition/Parent="Room"
+s:Ge/BeamPosition/Type="Group"
+d:Ge/BeamPosition/TransX=0. m
+d:Ge/BeamPosition/TransY=0. m
+d:Ge/BeamPosition/TransZ= 0. m
+d:Ge/BeamPosition/RotX=0. deg
+d:Ge/BeamPosition/RotY=0. deg
+d:Ge/BeamPosition/RotZ=0. deg
+
+#-- To visualise Beam Box --#
+s:Ge/PlaneAtBeamPosition/Type      = "TsBox"
+s:Ge/PlaneAtBeamPosition/Material  = "Vacuum"
+s:Ge/PlaneAtBeamPosition/Parent    = "DeliveryBLineBox"
+d:Ge/PlaneAtBeamPosition/HLX       = 5 cm 
+d:Ge/PlaneAtBeamPosition/HLY       = 5 cm 
+d:Ge/PlaneAtBeamPosition/HLZ       = 0.1 nm
+d:Ge/PlaneAtBeamPosition/TransX    = 0. m
+d:Ge/PlaneAtBeamPosition/TransY    = 0. m
+d:Ge/PlaneAtBeamPosition/TransZ    = -0.1 nm 
+d:Ge/PlaneAtBeamPosition/RotX      = 0. deg
+d:Ge/PlaneAtBeamPosition/RotY      = 0. deg
+d:Ge/PlaneAtBeamPosition/RotZ      = 0. deg
+s:Ge/PlaneAtBeamPosition/Color= "Purple" 
+s:Ge/PlaneAtBeamPosition/DrawingStyle = "Solid" 
+
+#-- Phase space scoring at Beam Source Plane --#
+s:Sc/Beam/Quantity                  = "PhaseSpace"
+b:Sc/Beam/OutputToConsole           = "True"
+s:Sc/Beam/Surface                   = "PlaneAtBeamPosition/ZPlusSurface"
+s:Sc/Beam/OutputType                = "ASCII"
+i:Sc/Beam/OutputBufferSize          = 100
+b:Sc/Beam/IncludeRunID              = "True"
+b:Sc/Beam/IncludeEventID            = "True"
+b:Sc/Beam/IncludeTrackID            = "True"
+b:Sc/Beam/IncludeTime               = "True"
+b:Sc/Beam/IncludeSeed               = "True"
+s:Sc/Beam/IfOutputFileAlreadyExists = "Overwrite"
+s:Sc/Beam/OutputFile                = "BeamOutput"

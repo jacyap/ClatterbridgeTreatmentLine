@@ -1,0 +1,72 @@
+##################################
+##  Visualiser settings         ##
+##  Written by J Yap 2019       ##
+##################################
+
+#-- Phantom & Scoring --#
+includeFile = Scoring.txt
+
+s:Gr/MyViewer/Type        = "OpenGL"
+i:Gr/MyViewer/WindowSizeX = 1024
+i:Gr/MyViewer/WindowSizeY = 768
+i:Gr/MyViewer/WindowPosX  = 0
+i:Gr/MyViewer/WindowPosY  = 0
+
+#=====================================================================#
+# Viewing options
+#=====================================================================#
+
+#u:Gr/MyViewer/Zoom = 70 #50 #17  #150.
+#s:Gr/MyViewer/CenterOn = "Phantom" #"AlTube2" #"PhaseSpaceZ" #"BrassStopper" #"TungstenWireH" #"Propeller" #"BrassNozzle" #"DoseMonitor1_Bolts" #
+#d:Gr/MyViewer/Theta       = -80 deg #-50. deg 
+#d:Gr/MyViewer/Phi         = 15. deg
+
+#s:Gr/MyViewer/AxesComponent = "Propeller"
+
+##-- Angled whole beamline --#
+u:Gr/MyViewer/Zoom = 16 #entire beamline
+s:Gr/MyViewer/CenterOn = "AlTube2"
+d:Gr/MyViewer/Theta       = -50. deg 
+d:Gr/MyViewer/Phi         = -15. deg
+
+#d:Gr/MyViewer/PerspectiveAngle = 10. deg
+#u:Gr/MyViewer/TransY = 0.
+#u:Gr/MyViewer/TransX = 10.
+
+#b:Gr/MyViewer/CopyOpenGLToEPS = "True"
+#s:Gr/MyViewer/Projection = "Perspective"
+
+#=====================================================================#
+# Axis and colours
+#=====================================================================#
+
+b:Gr/MyViewer/IncludeGeometry = "True" 
+b:Gr/MyViewer/IncludeTrajectories = "True" 
+b:Gr/MyViewer/IncludeStepPoints = "True" 
+#b:Gr/MyViewer/HiddenLineRemovalForGeometry = "True"
+b:Gr/MyViewer/HiddenLineRemovalForTrajectories = "True"
+#b:Gr/MyViewer/IncludeAxes = "True"
+s:Gr/MyViewer/AxesComponent = "World" 
+d:Gr/MyViewer/AxesSize = 50. cm 
+
+s:Gr/MyViewer/ColorBy = "particletype"
+sv:Gr/MyViewer/ColorByParticleTypeNames = 4 "e-" "gamma" "proton" "neutron" 
+sv:Gr/MyViewer/ColorByParticleTypeColors = 4 "red" "green" "blue" "yellow"
+#sv:Gr/MyViewer/ColorByOriginComponentNames = 1 "PlasticShielding"
+#sv:Gr/MyViewer/ColorByOriginComponentColors = 1 "orange"
+
+#=====================================================================#
+# Filtering
+#=====================================================================#
+
+#sv:Gr/OnlyIncludeParticlesNamed = 2 "proton" "neutron" # one or more particle names
+#sv:Gr/OnlyIncludeParticlesCharged = 1 "positive" # one or more "positive", "negative" or "neutral"
+#sv:Gr/OnlyIncludeParticlesCharged = 1 "neutral"
+#sv:Gr/OnlyIncludeParticlesFromVolume = 1 "TungstenWire" # one or more volume
+#sv:Gr/OnlyIncludeParticlesFromComponent = 1 "TungstenWire" # one or more component
+#sv:Gr/OnlyIncludeParticlesFromComponentOrSubComponentsOf = 1 "TungstenWire" #one or more
+#d:Gr/OnlyIncludeParticlesWithInitialKEBelow = 60. MeV # maximum energy
+#d:Gr/OnlyIncludeParticlesWithInitialKEAbove = 10. MeV # minimum energy
+#d:Gr/OnlyIncludeParticlesWithInitialMomentumBelow = 1. MeV # maximum momentum
+#d:Gr/OnlyIncludeParticlesWithInitialMomentumAbove = 10. MeV # minimum momentum
+#sv:Gr/OnlyIncludeParticlesFromProcess = 1 "hIoni" # one or more process name

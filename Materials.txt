@@ -1,0 +1,28 @@
+##################################
+##  Materials for CCC beamline  ##
+##  Written by J Yap 2019       ##
+##################################
+
+includeFile = BeamSource.txt
+
+#=====================================================================#
+# Materials Definitions
+#=====================================================================#
+
+# 5% borated polyethylene
+sv:Ma/BoratedPlastic/Components=3 "Boron" "Carbon" "Hydrogen" 
+uv:Ma/BoratedPlastic/Fractions=3 0.05 0.317 0.633
+d:Ma/BoratedPlastic/Density=1.04 g/cm3
+#d:Ma/BoratedPlastic/MeanExcitationEnergy=85.7 eV
+s:Ma/BoratedPlastic/DefaultColor="lightblue"
+
+# Kapton
+#sv:Ma/Kapton/Components=4 "Hydrogen" "Carbon" "Nitrogen" "Oxygen"
+#uv:Ma/Kapton/Fractions=4 0.027 0.691 0.073 0.209
+#d:Ma/Kapton/Density=1.42 g/cm3
+#s:Ma/Kapton/DefaultColor="Brown"
+
+# Sensitive layer EBT3
+sv:Ma/LiPCD/Components=4 "Carbon" "Hydrogen" "Oxygen" "Lithium"
+uv:Ma/LiPCD/Fractions=4 0.362 0.594 0.03 0.014
+d:Ma/LiPCD/Density=1.2 g/cm3

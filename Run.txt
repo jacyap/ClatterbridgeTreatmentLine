@@ -1,0 +1,45 @@
+##################################
+##  Run file                    ##
+##  Written by J Yap 2019       ##
+##################################
+
+#-- Turn off quickly --#
+i:So/BeamSource/NumberOfHistoriesInRun   = 100000
+b:Gr/MyViewer/Active = "False"
+i:Ts/TrackingVerbosity = 0
+i:Ts/EventVerbosity = 0
+i:Ts/MaxInterruptedHistories = 1000
+
+#=====================================================================#
+#  Parameter file chain  
+#=====================================================================#
+
+includeFile = Materials.txt
+
+# Run > Materials > BeamSource > Geometry > Visualiser > Scoring > ParallelScoring >/> FilmScoring
+                                          
+#=====================================================================#
+#  Definitions  
+#=====================================================================#
+u:half = 0.5
+
+i:Ts/NumberOfThreads = 4 #max 4
+
+#b:Ts/PauseBeforeInit = "True"
+#b:Ts/PauseBeforeSequence = "True"
+b:Ts/PauseBeforeQuit = "True"
+
+# Dump Parameters to file 
+#b:Ts/DumpParameters = "True"
+#b:Ts/DumpNonDefaultParameters = "True"
+#sv:Ts/DumpParametersToSimpleFile = 1 "Phantom"
+
+# Verbosity
+#b:Ts/IncludeTimeInHistoryCount = “True”
+b:Ts/ShowHistoryCountLessFrequentlyAsSimulationProgresses = "True"
+i:Ts/ShowHistoryCountAtInterval = 5000
+b:Ts/ShowHistoryCountOnSingleLine = "False"
+
+b:Ts/ShowCPUTime = "True"
+#i:Ts/RunIDPadding = 1
+
