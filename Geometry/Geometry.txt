@@ -1,0 +1,764 @@
+##################################
+##  Geometry for CCC beamline   ##
+##  Written by J Yap 2019       ##
+##################################
+
+# Input beam and physics
+includeFile = Visualiser.txt
+
+#~~~~~~~~~~~~~~~~~~#
+# Turn off check for overlaps
+#~~~~~~~~~~~~~~~~~~#
+#b:Ge/CheckForOverlaps="False"
+#i:Ge/CheckForOverlapsResolution = 10000
+#d:Ge/CheckForOverlapsTolerance = 0.005 mm
+#b:Ge/CheckForUnusedComponents = "False"
+
+#~~~~~~~~~~~~~~~~~~#
+# Remove or hide components quickly 
+# (#components included)
+#~~~~~~~~~~~~~~~~~~#
+
+#b:Ge/World/Invisible = "True"
+b:Ge/Room/Invisible = "True" 
+b:Ge/RoomWall/Invisible = "True" 
+#b:Ge/DeliveryBLineBox/Include = "False"
+b:Ge/DeliveryBLineBox/Invisible = "True"
+#b:Ge/PlasticShielding/Include = "False"
+b:Ge/PlasticShielding/Invisible = "True" 
+b:Ge/PlaneAtBeamPosition/Invisible = "True" 
+
+#-- Parallel World--#
+# Amend in ParallelScoring.txt
+
+#-- Scattering Tube --#
+#b:Ge/AlTube1/Include = "False"
+#b:Ge/AlTube1/Invisible = "True" 
+#b:Ge/BrassCollimator1/Include = "False"
+#b:Ge/BrassCollimator1/Invisible = "True" 
+#b:Ge/TungstenFoil1/Include = "False"
+#b:Ge/TungstenFoil2/Include = "False"
+#b:Ge/BrassStopper/Include = "False"
+#b:Ge/BrassStopper/Invisible = "True" 
+#b:Ge/KaptonWindow/Include = "False"
+#b:Ge/ScatteringTubeVacuum/Include = "False"
+b:Ge/ScatteringTubeVacuum/Invisible = "True" 
+
+#-- Modulation Box --#
+#b:Ge/AlBoxModulation/Include = "False"
+#b:Ge/AlBoxModulation/Invisible = "True" 
+#b:Ge/IronBlock/Include = "False"
+#b:Ge/AlTube2/Include = "False"
+#b:Ge/AlTube2/Invisible = "True" 
+
+##- Propeller -##
+b:Ge/Propeller/Include = "False"
+b:Ge/Propeller/Invisible = "True" 
+b:Ge/PropellerCentre/Include = "False"
+b:Ge/PropellerCentre/Invisible = "True" 
+
+#-- Dosimetry Box --#
+#b:Ge/AlBoxDosimetry/Include = "False"
+#b:Ge/AlBoxDosimetry/Invisible = "True" 
+#b:Ge/BrassCollimator2/Include = "False"
+#b:Ge/BrassCollimator2/Invisible = "True" 
+#b:Ge/TungstenWireV/Include = "False"
+#b:Ge/TungstenWireH/Include = "False"
+#b:Ge/CrosswireFixture/Include = "False"
+#b:Ge/AlCollimator/Include = "False" 
+#b:Ge/AlCollimator/Invisible = "True" 
+
+#-- Dose Monitors --#
+#b:Ge/DoseMonitor1_PMMA/Include = "False"
+#b:Ge/DoseMonitor1_PMMA/Invisible = "True" 
+#b:Ge/DoseMonitor1_MylarFoils/Include = "False"
+#b:Ge/DoseMonitor1_MylarFoils/Invisible = "True" 
+#b:Ge/DoseMonitor1_AlFoils/Include = "False"
+#b:Ge/DoseMonitor1_AlFoils/Invisible = "True" 
+#b:Ge/DoseMonitor1_GuardRing/Include = "False"
+#b:Ge/DoseMonitor1_GuardRing/Invisible = "True"
+#b:Ge/DoseMonitor1_Bolts/Include = "False"
+#b:Ge/DoseMonitor1_Bolts/Invisible = "True" 
+
+#b:Ge/DoseMonitor2_PMMA/Include = "False"
+#b:Ge/DoseMonitor2_PMMA/Invisible = "True" 
+#b:Ge/DoseMonitor2_MylarFoils/Include = "False"
+#b:Ge/DoseMonitor2_MylarFoils/Invisible = "True" 
+#b:Ge/DoseMonitor2_AlFoils/Include = "False"
+#b:Ge/DoseMonitor2_AlFoils/Invisible = "True" 
+#b:Ge/DoseMonitor2_GuardRing/Include = "False"
+#b:Ge/DoseMonitor2_GuardRing/Invisible = "True"
+#b:Ge/DoseMonitor2_Bolts/Include = "False"
+#b:Ge/DoseMonitor2_Bolts/Invisible = "True" 
+
+#-- Nozzle --#
+#b:Ge/BrassNozzle/Include = "False"
+#b:Ge/BrassNozzle/Invisible = "True"
+b:Ge/CollimatorCap/Include = "False"
+#b:Ge/CollimatorCap/Invisible = "True" 
+b:Ge/NozzleCollimator/Include = "False"
+b:Ge/NozzleCollimator/Invisible = "True" 
+
+#=====================================================================#
+# World volume
+#=====================================================================#
+d:Ge/World/HLX= 5. m
+d:Ge/World/HLY= 3. m
+d:Ge/World/HLZ= 11. m
+s:Ge/World/Color= "White"
+
+#=====================================================================#
+# World volume = Room
+#=====================================================================#
+s:Ge/Room/Parent="World"
+s:Ge/Room/Type="TsBox"
+s:Ge/Room/Material="Air"
+
+d:Ge/Room/HLX= 4. m
+d:Ge/Room/HLY= 2. m
+d:Ge/Room/HLZ= 5. m
+d:Ge/Room/TransX=0. m
+d:Ge/Room/TransY=0. m
+d:Ge/Room/TransZ=0. m 
+s:Ge/Room/Color= "White"    
+#i:Ge/MyComponent/VisSegsPerCircle = 100
+
+#=====================================================================#
+# Wall behind room
+#=====================================================================#
+
+s:Ge/RoomWall/Parent="DeliveryBLineBox"
+s:Ge/RoomWall/Type="TsBox" 
+s:Ge/RoomWall/Material="Lead"
+s:Ge/RoomWall/Color= "Purple" 
+s:Ge/RoomWall/DrawingStyle = "FullWireFrame" 
+
+d:Ge/RoomWall/HLX= Ge/DeliveryBLineBox/HLX - 0.5 mm
+d:Ge/RoomWall/HLY= Ge/DeliveryBLineBox/HLY - 0.5 mm 
+d:Ge/RoomWall/HLZ= 10. cm
+d:Ge/RoomWall/TransX=0. m
+d:Ge/RoomWall/TransY=0. m
+d:Ge/RoomWall/TransZ= -0.05 mm - Ge/RoomWall/HLZ 
+d:Ge/RoomWall/RotX=0. deg
+d:Ge/RoomWall/RotY=0. deg
+d:Ge/RoomWall/RotZ=0. deg
+
+#=====================================================================#
+# DeliveryBLineBox in Room = Parallel World in G4 sim
+#=====================================================================#
+
+s:Ge/DeliveryBLineBox/Parent="Room"
+s:Ge/DeliveryBLineBox/Type="TsBox" 
+s:Ge/DeliveryBLineBox/Material="Air"
+s:Ge/DeliveryBLineBox/Color= "Blue" 
+
+d:Ge/DeliveryBLineBox/HLX= 1. m
+d:Ge/DeliveryBLineBox/HLY= 1. m
+d:Ge/DeliveryBLineBox/HLZ= 4200 mm
+d:Ge/DeliveryBLineBox/TransX=0. m
+d:Ge/DeliveryBLineBox/TransY=0. m
+d:Ge/DeliveryBLineBox/TransZ= 0. m 
+d:Ge/DeliveryBLineBox/RotX=0. deg
+d:Ge/DeliveryBLineBox/RotY=0. deg
+d:Ge/DeliveryBLineBox/RotZ=0. deg
+i:Ge/DeliveryBLineBox/XBins = 1
+i:Ge/DeliveryBLineBox/YBins = 1
+i:Ge/DeliveryBLineBox/ZBins = 1
+
+#=====================================================================#
+# Treatment beamline inside DeliveryBLineBox
+#=====================================================================#
+
+#-- PlasticShielding --#
+s:Ge/PlasticShielding/Parent="DeliveryBLineBox"
+s:Ge/PlasticShielding/InputFile = "Geometry/Borated Plastic Shielding"
+s:Ge/PlasticShielding/FileFormat = "stl"
+s:Ge/PlasticShielding/Material = "BoratedPlastic"
+s:Ge/PlasticShielding/Type="TsCAD"
+d:Ge/PlasticShielding/Units = 1.0 mm
+d:Ge/PlasticShielding/TransX=0. m
+d:Ge/PlasticShielding/TransY=0. m
+d:Ge/PlasticShielding/TransZ=0. m
+d:Ge/PlasticShielding/RotX=0. deg
+d:Ge/PlasticShielding/RotY=0. deg
+d:Ge/PlasticShielding/RotZ=0. deg
+s:Ge/PlasticShielding/DrawingStyle = "Wireframe" 
+s:Ge/PlasticShielding/Color= "lightblue" 
+
+#~~~~~~~~~~~~~~~~~~#
+# Scattering Tube  #
+#~~~~~~~~~~~~~~~~~~#
+
+#-- AlTube1 --#
+s:Ge/AlTube1/Parent="DeliveryBLineBox"
+s:Ge/AlTube1/Material = "Aluminum"
+s:Ge/AlTube1/Type="TsCylinder"
+d:Ge/AlTube1/TransX=0. m
+d:Ge/AlTube1/TransY=0. m
+d:Ge/AlTube1/TransZ= 0. mm + Ge/AlTube1/HL
+d:Ge/AlTube1/RMin= 36 mm
+d:Ge/AlTube1/RMax= 38 mm
+d:Ge/AlTube1/RotX=0. deg
+d:Ge/AlTube1/RotY=0. deg
+d:Ge/AlTube1/RotZ=0. deg
+d:Ge/AlTube1/HL=181.475 mm
+s:Ge/AlTube1/DrawingStyle = "FullWireFrame"
+s:Ge/AlTube1/Color= "Silver"
+i:Ge/AlTube1/VisSegsPerCircle = 15
+
+#-- BrassCollimator1 --#
+s:Ge/BrassCollimator1/Parent="DeliveryBLineBox"
+s:Ge/BrassCollimator1/InputFile = "Geometry/Brass Collimator1"
+s:Ge/BrassCollimator1/FileFormat = "stl"
+s:Ge/BrassCollimator1/Material = "Brass"
+s:Ge/BrassCollimator1/Type="TsCAD"
+d:Ge/BrassCollimator1/Units = 1.0 mm
+d:Ge/BrassCollimator1/TransX=0. m
+d:Ge/BrassCollimator1/TransY=0. m
+d:Ge/BrassCollimator1/TransZ=55. mm
+d:Ge/BrassCollimator1/RotX=0. deg
+d:Ge/BrassCollimator1/RotY=90. deg #needs to be rotated
+d:Ge/BrassCollimator1/RotZ=0 deg
+s:Ge/BrassCollimator1/DrawingStyle = "Wireframe"
+s:Ge/BrassCollimator1/Color= "Orange"
+#i:Ge/BrassCollimator1/VisSegsPerCircle = 3
+
+#-- TungstenFoil1 --#
+s:Ge/TungstenFoil1/Parent="DeliveryBLineBox"
+s:Ge/TungstenFoil1/InputFile = "Geometry/Tungsten Scatter Foil"
+s:Ge/TungstenFoil1/FileFormat = "stl"
+s:Ge/TungstenFoil1/Material = "G4_W"
+s:Ge/TungstenFoil1/Type="TsCAD"
+d:Ge/TungstenFoil1/Units = 0.95 mm
+d:Ge/TungstenFoil1/TransX=0. m
+d:Ge/TungstenFoil1/TransY=0. m
+d:Ge/TungstenFoil1/TransZ=80.0125 mm #- Ge/AlTube1/HL
+d:Ge/TungstenFoil1/RotX=0. deg
+d:Ge/TungstenFoil1/RotY=0. deg
+d:Ge/TungstenFoil1/RotZ=0. deg
+s:Ge/TungstenFoil1/DrawingStyle = "Wireframe"
+s:Ge/TungstenFoil1/Color= "Olive" 
+
+#-- TungstenFoil2 --#
+s:Ge/TungstenFoil2/Parent="DeliveryBLineBox"
+s:Ge/TungstenFoil2/InputFile = "Geometry/Tungsten Scatter Foil"
+s:Ge/TungstenFoil2/FileFormat = "stl"
+s:Ge/TungstenFoil2/Material = "G4_W"
+s:Ge/TungstenFoil2/Type="TsCAD"
+d:Ge/TungstenFoil2/Units = 1.0 mm
+d:Ge/TungstenFoil2/TransX=0. m
+d:Ge/TungstenFoil2/TransY=0. m
+d:Ge/TungstenFoil2/TransZ=306.6125 mm #126.1375 mm # - Ge/AlTube1/HL
+d:Ge/TungstenFoil2/RotX=0. deg
+d:Ge/TungstenFoil2/RotY=0. deg
+d:Ge/TungstenFoil2/RotZ=0. deg
+s:Ge/TungstenFoil2/DrawingStyle = "Wireframe"
+s:Ge/TungstenFoil2/Color= "Olive" 
+
+#-- BrassStopper --#
+s:Ge/BrassStopper/Parent="ScatteringTubeVacuum"
+#s:Ge/BrassStopper/InputFile = "Geometry/Brass Stopper"
+#s:Ge/BrassStopper/FileFormat = "stl"
+s:Ge/BrassStopper/Type          = "TsCylinder"
+s:Ge/BrassStopper/Material = "Brass"
+#s:Ge/BrassStopper/Type="TsCAD"
+#d:Ge/BrassStopper/Units = 1.0 mm
+d:Ge/BrassStopper/RMin          = 0.0 mm  
+d:Ge/BrassStopper/RMax          = 2.8 mm  
+d:Ge/BrassStopper/HL            = 3.3 mm
+d:Ge/BrassStopper/TransX=0. m
+d:Ge/BrassStopper/TransY=0. m
+d:Ge/BrassStopper/TransZ= -303.275 mm #2.90 mm #306.625-3.3-0.05 mm #-300 mm #306.6125 mm #origin at end 
+d:Ge/BrassStopper/RotX=0. deg
+d:Ge/BrassStopper/RotY=0. deg
+d:Ge/BrassStopper/RotZ=0. deg
+s:Ge/BrassStopper/DrawingStyle = "FullWireframe"
+s:Ge/BrassStopper/Color= "Brown" 
+i:Ge/BrassStopper/VisSegsPerCircle = 15
+
+
+#-- KaptonWindow --#
+s:Ge/KaptonWindow/Parent="DeliveryBLineBox"
+s:Ge/KaptonWindow/InputFile = "Geometry/Kapton Window"
+s:Ge/KaptonWindow/FileFormat = "stl"
+s:Ge/KaptonWindow/Material = "Kapton"
+s:Ge/KaptonWindow/Type="TsCAD"
+d:Ge/KaptonWindow/Units = 1.0 mm
+d:Ge/KaptonWindow/TransX=0. m
+d:Ge/KaptonWindow/TransY=0. m
+d:Ge/KaptonWindow/TransZ=356. mm
+d:Ge/KaptonWindow/RotX=0. deg
+d:Ge/KaptonWindow/RotY=0. deg
+d:Ge/KaptonWindow/RotZ=0. deg
+s:Ge/KaptonWindow/DrawingStyle = "Wireframe"
+s:Ge/KaptonWindow/Color= "Teal"
+
+#-- ScatteringTubeVacuum --#
+s:Ge/ScatteringTubeVacuum/Parent="DeliveryBLineBox"
+s:Ge/ScatteringTubeVacuum/InputFile = "Geometry/Scattering Tube Vacuum"
+s:Ge/ScatteringTubeVacuum/FileFormat = "stl"
+s:Ge/ScatteringTubeVacuum/Material = "Vacuum"
+s:Ge/ScatteringTubeVacuum/Type="TsCAD"
+d:Ge/ScatteringTubeVacuum/Units = 1.0 mm
+d:Ge/ScatteringTubeVacuum/TransX=0. m
+d:Ge/ScatteringTubeVacuum/TransY=0. m
+d:Ge/ScatteringTubeVacuum/TransZ=0. mm #360.95 mm
+d:Ge/ScatteringTubeVacuum/RotX=180. deg
+d:Ge/ScatteringTubeVacuum/RotY=0. deg
+d:Ge/ScatteringTubeVacuum/RotZ=0. deg
+s:Ge/ScatteringTubeVacuum/DrawingStyle = "Wireframe"
+s:Ge/ScatteringTubeVacuum/Color= "Grey"
+i:Ge/ScatteringTubeVacuum/VisSegsPerCircle = 1
+
+#~~~~~~~~~~~~~~~~~~#
+# Modulation box   #
+#~~~~~~~~~~~~~~~~~~#
+
+#-- AlBoxModulation --#
+s:Ge/AlBoxModulation/Parent="DeliveryBLineBox"
+s:Ge/AlBoxModulation/InputFile = "Geometry/Al Box Modulation"
+s:Ge/AlBoxModulation/FileFormat = "stl"
+s:Ge/AlBoxModulation/Material = "Aluminum"
+s:Ge/AlBoxModulation/Type="TsCAD"
+d:Ge/AlBoxModulation/Units = 1.0 mm
+d:Ge/AlBoxModulation/TransX=0. m
+d:Ge/AlBoxModulation/TransY=0. m
+d:Ge/AlBoxModulation/TransZ=0. m
+d:Ge/AlBoxModulation/RotX=0. deg
+d:Ge/AlBoxModulation/RotY=0. deg
+d:Ge/AlBoxModulation/RotZ=0. deg
+s:Ge/AlBoxModulation/DrawingStyle = "Wireframe"
+s:Ge/AlBoxModulation/Color= "Grey"
+
+####################
+# Modulation Wheel #
+####################
+# Propeller #
+
+s:Ge/Propeller/Type             = "TsPropeller"
+s:Ge/Propeller/Parent           = "AlBoxModulation"
+d:Ge/Propeller/TransX           = 0.0 cm
+d:Ge/Propeller/TransY           = 0.0 cm
+d:Ge/Propeller/TransZ           = 530.95 mm
+d:Ge/Propeller/RotX             = 0.0 deg
+d:Ge/Propeller/RotY             = 0.0 deg
+d:Ge/Propeller/RotZ             = 0.0 deg
+#b:Ge/Propeller/Invisible        = "TRUE"
+b:Ge/Propeller/PrintInformation = "True"
+
+i:Ge/Propeller/NbOfBlades = 4
+d:Ge/Propeller/Rin        = 10.0 mm
+d:Ge/Propeller/Rout       = 80 mm 
+
+s:Ge/Propeller/Blade/Material         = "Parent" #Set to Parent
+s:Ge/Propeller/Blade/Color            = "skyblue"
+s:Ge/Propeller/Blade/DrawingStyle     = "Solid"
+i:Ge/Propeller/Blade/VisSegsPerCircle = 360
+d:Ge/Propeller/Blade/MaxStepSize      = 10 mm
+
+dv:Ge/Propeller/Thickness = 10
+0.5	0.6	0.7	0.8	0.9	1.0	1.1	1.2	1.3	1.4	mm
+dv:Ge/Propeller/Angles = 10
+63.15  54.15  46.450  40.65  35.85  31.8   28.1   24.725  21.8   19.1   deg
+sv:Ge/Propeller/Materials = 10
+"Lexan" "G4_WATER" "G4_POLYVINYL_ACETATE" "G4_POLYVINYL_ACETATE" "G4_POLYVINYL_ACETATE"
+"G4_POLYVINYL_ACETATE"  "G4_POLYVINYL_ACETATE" "G4_POLYVINYL_ACETATE" "G4_POLYVINYL_ACETATE" "G4_POLYVINYL_ACETATE"
+
+##-- Central circular piece --##
+
+s:Ge/PropellerCentre/Material = "Lucite"
+s:Ge/PropellerCentre/Type="TsCylinder"
+s:Ge/PropellerCentre/Parent= "DeliveryBLineBox"
+d:Ge/PropellerCentre/TransX=0. m
+d:Ge/PropellerCentre/TransY=0. m
+d:Ge/PropellerCentre/TransZ= 530.95 mm # Ge/Propeller/TransZ mm
+d:Ge/PropellerCentre/RMin= 0 mm
+d:Ge/PropellerCentre/RMax= 9.5 mm
+d:Ge/PropellerCentre/RotX=0. deg
+d:Ge/PropellerCentre/RotY=0. deg
+d:Ge/PropellerCentre/RotZ=0. deg
+d:Ge/PropellerCentre/HL= 5 mm
+s:Ge/PropellerCentre/DrawingStyle = "Solid"
+s:Ge/PropellerCentre/Color= "Purple"
+i:Ge/PropellerCentre/VisSegsPerCircle = 10
+
+####################
+
+#-- IronBlock --#
+s:Ge/IronBlock/Parent="DeliveryBLineBox"
+s:Ge/IronBlock/InputFile = "Geometry/Iron Block"
+s:Ge/IronBlock/FileFormat = "stl"
+s:Ge/IronBlock/Material = "Iron"
+s:Ge/IronBlock/Type="TsCAD"
+d:Ge/IronBlock/Units = 1.0 mm
+d:Ge/IronBlock/TransX=0. m
+d:Ge/IronBlock/TransY=0. m
+d:Ge/IronBlock/TransZ=0. m
+d:Ge/IronBlock/RotX=0. deg
+d:Ge/IronBlock/RotY=0. deg
+d:Ge/IronBlock/RotZ=0. deg
+s:Ge/IronBlock/DrawingStyle = "Wireframe"
+s:Ge/IronBlock/Color= "Grey"
+
+#-- AlTube2 --#
+s:Ge/AlTube2/Parent="DeliveryBLineBox"
+s:Ge/AlTube2/Material = "Aluminum"
+s:Ge/AlTube2/Type="TsCylinder"
+d:Ge/AlTube2/TransX=0. m
+d:Ge/AlTube2/TransY=0. m
+d:Ge/AlTube2/TransZ=631.0 mm + Ge/AlTube2/HL
+d:Ge/AlTube2/RMin= 36 mm
+d:Ge/AlTube2/RMax= 37.85 mm # avoid overlap 38 - 0.15 mm
+d:Ge/AlTube2/RotX=0. deg
+d:Ge/AlTube2/RotY=0. deg
+d:Ge/AlTube2/RotZ=0. deg
+d:Ge/AlTube2/HL=215.45 mm
+s:Ge/AlTube2/DrawingStyle = "FullWireFrame"
+s:Ge/AlTube2/Color= "Silver"
+i:Ge/AlTube2/VisSegsPerCircle = 10
+
+#~~~~~~~~~~~~~~~~~~#
+# Dosimetry Box    #
+#~~~~~~~~~~~~~~~~~~#
+
+#-- AlBoxDosimetry --#
+s:Ge/AlBoxDosimetry/Parent="DeliveryBLineBox"
+s:Ge/AlBoxDosimetry/InputFile = "Geometry/Al Box Dosimetry"
+s:Ge/AlBoxDosimetry/FileFormat = "stl"
+s:Ge/AlBoxDosimetry/Material = "Aluminum"
+s:Ge/AlBoxDosimetry/Type="TsCAD"
+d:Ge/AlBoxDosimetry/Units = 1.0 mm
+d:Ge/AlBoxDosimetry/TransX=0. m
+d:Ge/AlBoxDosimetry/TransY=0. m
+d:Ge/AlBoxDosimetry/TransZ=0. m
+d:Ge/AlBoxDosimetry/RotX=0. deg
+d:Ge/AlBoxDosimetry/RotY=0. deg
+d:Ge/AlBoxDosimetry/RotZ=0. deg
+s:Ge/AlBoxDosimetry/DrawingStyle = "Wireframe"
+s:Ge/AlBoxDosimetry/Color= "Silver"
+i:Ge/AlBoxDosimetry/VisSegsPerCircle = 2
+
+#-- BrassCollimator2 --#
+s:Ge/BrassCollimator2/Parent="AlBoxDosimetry"
+s:Ge/BrassCollimator2/InputFile = "Geometry/Brass Collimator2"
+s:Ge/BrassCollimator2/FileFormat = "stl"
+s:Ge/BrassCollimator2/Material = "Brass"
+s:Ge/BrassCollimator2/Type="TsCAD"
+d:Ge/BrassCollimator2/Units = 1.0 mm
+d:Ge/BrassCollimator2/TransX=0. m
+d:Ge/BrassCollimator2/TransY=0. m
+d:Ge/BrassCollimator2/TransZ=0. m
+d:Ge/BrassCollimator2/RotX=0. deg
+d:Ge/BrassCollimator2/RotY=0. deg
+d:Ge/BrassCollimator2/RotZ=0. deg
+s:Ge/BrassCollimator2/DrawingStyle = "Wireframe"
+s:Ge/BrassCollimator2/Color= "Orange" 
+
+#-- AlCollimator --#
+s:Ge/AlCollimator/Parent="DeliveryBLineBox"
+s:Ge/AlCollimator/InputFile = "Geometry/Al Collimator"
+s:Ge/AlCollimator/FileFormat = "stl"
+s:Ge/AlCollimator/Material = "Aluminum"
+s:Ge/AlCollimator/Type="TsCAD"
+d:Ge/AlCollimator/Units = 1.0 mm
+d:Ge/AlCollimator/TransX=0. m
+d:Ge/AlCollimator/TransY=0. m
+d:Ge/AlCollimator/TransZ=0. m
+d:Ge/AlCollimator/RotX=0. deg
+d:Ge/AlCollimator/RotY=0. deg
+d:Ge/AlCollimator/RotZ=0. deg
+s:Ge/AlCollimator/DrawingStyle = "Wireframe"
+s:Ge/AlCollimator/Color= "skyblue"
+
+#-- TungstenWires --#
+s:Ge/TungstenWireV/Type          = "TsCylinder"
+s:Ge/TungstenWireV/Parent        = "AlBoxDosimetry"
+s:Ge/TungstenWireV/Material      = "G4_W"
+d:Ge/TungstenWireV/RMin          = 0.0 mm    # Inner collimator radius
+d:Ge/TungstenWireV/RMax          = 0.075 mm  # should be 0.15mm diameter
+d:Ge/TungstenWireV/HL            = 70.0 mm
+d:Ge/TungstenWireV/SPhi          = 0. deg
+d:Ge/TungstenWireV/DPhi          = 360. deg
+d:Ge/TungstenWireV/RotX          = 90. deg
+d:Ge/TungstenWireV/RotY          = 0. deg
+d:Ge/TungstenWireV/RotZ          = 0. deg
+d:Ge/TungstenWireV/TransX        = 0. mm
+d:Ge/TungstenWireV/TransY        = 0. mm
+d:Ge/TungstenWireV/TransZ        = 1529.05 mm 
+s:Ge/TungstenWireV/Color         = "navy"
+s:Ge/TungstenWireV/DrawingStyle  = "Solid"
+i:Ge/TungstenWireV/VisSegsPerCircle = 15
+
+s:Ge/TungstenWireH/Type          = "TsCylinder"
+s:Ge/TungstenWireH/Parent        = "AlBoxDosimetry"
+s:Ge/TungstenWireH/Material      = "G4_W"
+d:Ge/TungstenWireH/RMin          = 0.0 mm    # Inner collimator radius
+d:Ge/TungstenWireH/RMax          = 0.075 mm  
+d:Ge/TungstenWireH/HL            = 70.0 mm
+d:Ge/TungstenWireH/SPhi          = 0. deg
+d:Ge/TungstenWireH/DPhi          = 360. deg
+d:Ge/TungstenWireH/RotX          = 0. deg
+d:Ge/TungstenWireH/RotY          = 90. deg
+d:Ge/TungstenWireH/RotZ          = 0. deg
+d:Ge/TungstenWireH/TransX        = 0. mm
+d:Ge/TungstenWireH/TransY        = 0. mm
+d:Ge/TungstenWireH/TransZ        = 1529.0 mm 
+s:Ge/TungstenWireH/Color         = "navy"
+s:Ge/TungstenWireH/DrawingStyle  = "Solid"
+i:Ge/TungstenWireH/VisSegsPerCircle = 15
+
+#-- CrosswireFixtures --#
+s:Ge/CrosswireFixture/Parent="DeliveryBLineBox"
+s:Ge/CrosswireFixture/InputFile = "Geometry/Crosswire Fixture"
+s:Ge/CrosswireFixture/FileFormat = "stl"
+s:Ge/CrosswireFixture/Material = "Aluminum"
+s:Ge/CrosswireFixture/Type="TsCAD"
+d:Ge/CrosswireFixture/Units = 1.0 mm
+d:Ge/CrosswireFixture/TransX=0. m
+d:Ge/CrosswireFixture/TransY=0. m
+d:Ge/CrosswireFixture/TransZ=0. m #1553.405 mm
+d:Ge/CrosswireFixture/RotX=0. deg
+d:Ge/CrosswireFixture/RotY=0. deg
+d:Ge/CrosswireFixture/RotZ=0. deg
+s:Ge/CrosswireFixture/DrawingStyle = "FullWireframe"
+s:Ge/CrosswireFixture/Color= "Grass" 
+i:Ge/CrosswireFixture/VisSegsPerCircle = 10
+
+#~~~~~~~~~~~~~~~~~~#
+# Dose monitors    #
+#~~~~~~~~~~~~~~~~~~#
+
+#-- DoseMonitor1 --#
+s:Ge/DoseMonitor1_PMMA/Parent="DeliveryBLineBox"
+s:Ge/DoseMonitor1_PMMA/InputFile = "Geometry/DM1_PMMA"
+s:Ge/DoseMonitor1_PMMA/FileFormat = "stl"
+s:Ge/DoseMonitor1_PMMA/Material = "Lucite"
+s:Ge/DoseMonitor1_PMMA/Type="TsCAD"
+d:Ge/DoseMonitor1_PMMA/Units = 1.0 mm
+d:Ge/DoseMonitor1_PMMA/TransX=0. m
+d:Ge/DoseMonitor1_PMMA/TransY=0. m
+d:Ge/DoseMonitor1_PMMA/TransZ=1143.306 mm #1141.70 mm
+d:Ge/DoseMonitor1_PMMA/RotX=0. deg
+d:Ge/DoseMonitor1_PMMA/RotY=0. deg
+d:Ge/DoseMonitor1_PMMA/RotZ=0. deg
+s:Ge/DoseMonitor1_PMMA/DrawingStyle = "Wireframe"
+s:Ge/DoseMonitor1_PMMA/Color= "Magenta" 
+#i:Ge/DoseMonitor1_PMMA/VisSegsPerCircle = 1
+
+s:Ge/DoseMonitor1_MylarFoils/Parent="DoseMonitor1_PMMA"
+s:Ge/DoseMonitor1_MylarFoils/InputFile = "Geometry/DM1_MylarFoils"
+s:Ge/DoseMonitor1_MylarFoils/FileFormat = "stl"
+s:Ge/DoseMonitor1_MylarFoils/Material = "Mylar"
+s:Ge/DoseMonitor1_MylarFoils/Type="TsCAD"
+d:Ge/DoseMonitor1_MylarFoils/Units = 1.0 mm
+d:Ge/DoseMonitor1_MylarFoils/TransX=0. mm
+d:Ge/DoseMonitor1_MylarFoils/TransY=0. m
+d:Ge/DoseMonitor1_MylarFoils/TransZ=0. mm
+d:Ge/DoseMonitor1_MylarFoils/RotX=0. deg
+d:Ge/DoseMonitor1_MylarFoils/RotY=0. deg
+d:Ge/DoseMonitor1_MylarFoils/RotZ=0. deg
+s:Ge/DoseMonitor1_MylarFoils/DrawingStyle = "Wireframe"
+s:Ge/DoseMonitor1_MylarFoils/Color= "Lime" 
+#i:Ge/DoseMonitor1_MylarFoils/VisSegsPerCircle = 3
+
+s:Ge/DoseMonitor1_AlFoils/Parent="DoseMonitor1_PMMA"
+s:Ge/DoseMonitor1_AlFoils/InputFile = "Geometry/DM1_AlFoils"
+s:Ge/DoseMonitor1_AlFoils/FileFormat = "stl"
+s:Ge/DoseMonitor1_AlFoils/Material = "Aluminum"
+s:Ge/DoseMonitor1_AlFoils/Type="TsCAD"
+d:Ge/DoseMonitor1_AlFoils/Units = 1.0 mm
+d:Ge/DoseMonitor1_AlFoils/TransX=0. mm
+d:Ge/DoseMonitor1_AlFoils/TransY=0. m
+d:Ge/DoseMonitor1_AlFoils/TransZ=0. mm
+d:Ge/DoseMonitor1_AlFoils/RotX=0. deg
+d:Ge/DoseMonitor1_AlFoils/RotY=0. deg
+d:Ge/DoseMonitor1_AlFoils/RotZ=0. deg
+s:Ge/DoseMonitor1_AlFoils/DrawingStyle = "Solid"
+s:Ge/DoseMonitor1_AlFoils/Color= "White" 
+
+s:Ge/DoseMonitor1_GuardRing/Parent="DoseMonitor1_PMMA"
+s:Ge/DoseMonitor1_GuardRing/InputFile = "Geometry/DM1_GuardRing"
+s:Ge/DoseMonitor1_GuardRing/FileFormat = "stl"
+s:Ge/DoseMonitor1_GuardRing/Material = "Brass"
+s:Ge/DoseMonitor1_GuardRing/Type="TsCAD"
+d:Ge/DoseMonitor1_GuardRing/Units = 1.0 mm
+d:Ge/DoseMonitor1_GuardRing/TransX=0. mm
+d:Ge/DoseMonitor1_GuardRing/TransY=0. m
+d:Ge/DoseMonitor1_GuardRing/TransZ=0. mm
+d:Ge/DoseMonitor1_GuardRing/RotX=0. deg
+d:Ge/DoseMonitor1_GuardRing/RotY=0. deg 
+d:Ge/DoseMonitor1_GuardRing/RotZ=0. deg
+s:Ge/DoseMonitor1_GuardRing/DrawingStyle = "Solid"
+s:Ge/DoseMonitor1_GuardRing/Color= "Orange" 
+
+s:Ge/DoseMonitor1_Bolts/Parent="DoseMonitor1_PMMA"
+s:Ge/DoseMonitor1_Bolts/InputFile = "Geometry/DM1_Bolts"
+s:Ge/DoseMonitor1_Bolts/FileFormat = "stl"
+s:Ge/DoseMonitor1_Bolts/Material = "Steel"
+s:Ge/DoseMonitor1_Bolts/Type="TsCAD"
+d:Ge/DoseMonitor1_Bolts/Units = 1.0 mm
+d:Ge/DoseMonitor1_Bolts/TransX=0. mm
+d:Ge/DoseMonitor1_Bolts/TransY=0. mm
+d:Ge/DoseMonitor1_Bolts/TransZ=0. mm
+d:Ge/DoseMonitor1_Bolts/RotX=0. deg
+d:Ge/DoseMonitor1_Bolts/RotY=180. deg
+d:Ge/DoseMonitor1_Bolts/RotZ=0. deg
+s:Ge/DoseMonitor1_Bolts/DrawingStyle = "Solid"
+s:Ge/DoseMonitor1_Bolts/Color= "Teal" 
+
+
+#-- DoseMonitor2 --#
+s:Ge/DoseMonitor2_PMMA/Parent="DeliveryBLineBox"
+s:Ge/DoseMonitor2_PMMA/InputFile = "Geometry/DM2_PMMA"
+s:Ge/DoseMonitor2_PMMA/FileFormat = "stl"
+s:Ge/DoseMonitor2_PMMA/Material = "Lucite"
+s:Ge/DoseMonitor2_PMMA/Type="TsCAD"
+d:Ge/DoseMonitor2_PMMA/Units = 1.0 mm
+d:Ge/DoseMonitor2_PMMA/TransX=0. m
+d:Ge/DoseMonitor2_PMMA/TransY=0. m
+d:Ge/DoseMonitor2_PMMA/TransZ=1186.206 mm #1184.60 mm
+d:Ge/DoseMonitor2_PMMA/RotX=0. deg
+d:Ge/DoseMonitor2_PMMA/RotY=0. deg
+d:Ge/DoseMonitor2_PMMA/RotZ=0. deg
+s:Ge/DoseMonitor2_PMMA/DrawingStyle = "Wireframe"
+s:Ge/DoseMonitor2_PMMA/Color= "Violet" 
+i:Ge/DoseMonitor2_PMMA/VisSegsPerCircle = 1
+
+s:Ge/DoseMonitor2_MylarFoils/Parent="DoseMonitor2_PMMA"
+s:Ge/DoseMonitor2_MylarFoils/InputFile = "Geometry/DM2_MylarFoils"
+s:Ge/DoseMonitor2_MylarFoils/FileFormat = "stl"
+s:Ge/DoseMonitor2_MylarFoils/Material = "Mylar"
+s:Ge/DoseMonitor2_MylarFoils/Type="TsCAD"
+d:Ge/DoseMonitor2_MylarFoils/Units = 1.0 mm
+d:Ge/DoseMonitor2_MylarFoils/TransX=0. mm
+d:Ge/DoseMonitor2_MylarFoils/TransY=0. m
+d:Ge/DoseMonitor2_MylarFoils/TransZ=0. mm
+d:Ge/DoseMonitor2_MylarFoils/RotX=0. deg
+d:Ge/DoseMonitor2_MylarFoils/RotY=0. deg
+d:Ge/DoseMonitor2_MylarFoils/RotZ=0. deg
+s:Ge/DoseMonitor2_MylarFoils/DrawingStyle = "Wireframe"
+s:Ge/DoseMonitor2_MylarFoils/Color= "Lime"
+i:Ge/DoseMonitor2_MylarFoils/VisSegsPerCircle = 3
+
+s:Ge/DoseMonitor2_AlFoils/Parent="DoseMonitor2_PMMA"
+s:Ge/DoseMonitor2_AlFoils/InputFile = "Geometry/DM2_AlFoils"
+s:Ge/DoseMonitor2_AlFoils/FileFormat = "stl"
+s:Ge/DoseMonitor2_AlFoils/Material = "Aluminum"
+s:Ge/DoseMonitor2_AlFoils/Type="TsCAD"
+d:Ge/DoseMonitor2_AlFoils/Units = 1.0 mm
+d:Ge/DoseMonitor2_AlFoils/TransX=0. mm
+d:Ge/DoseMonitor2_AlFoils/TransY=0. m
+d:Ge/DoseMonitor2_AlFoils/TransZ=0. mm
+d:Ge/DoseMonitor2_AlFoils/RotX=0. deg
+d:Ge/DoseMonitor2_AlFoils/RotY=0. deg
+d:Ge/DoseMonitor2_AlFoils/RotZ=0. deg
+s:Ge/DoseMonitor2_AlFoils/DrawingStyle = "Solid"
+s:Ge/DoseMonitor2_AlFoils/Color= "White" 
+
+s:Ge/DoseMonitor2_GuardRing/Parent="DoseMonitor2_PMMA"
+s:Ge/DoseMonitor2_GuardRing/InputFile = "Geometry/DM2_GuardRing"
+s:Ge/DoseMonitor2_GuardRing/FileFormat = "stl"
+s:Ge/DoseMonitor2_GuardRing/Material = "Brass"
+s:Ge/DoseMonitor2_GuardRing/Type="TsCAD"
+d:Ge/DoseMonitor2_GuardRing/Units = 1.0 mm
+d:Ge/DoseMonitor2_GuardRing/TransX=0. mm
+d:Ge/DoseMonitor2_GuardRing/TransY=0. m
+d:Ge/DoseMonitor2_GuardRing/TransZ=0. mm
+d:Ge/DoseMonitor2_GuardRing/RotX=0. deg
+d:Ge/DoseMonitor2_GuardRing/RotY=90. deg
+d:Ge/DoseMonitor2_GuardRing/RotZ=0. deg
+s:Ge/DoseMonitor2_GuardRing/DrawingStyle = "Wireframe"
+s:Ge/DoseMonitor2_GuardRing/Color= "Orange" 
+
+s:Ge/DoseMonitor2_Bolts/Parent="DoseMonitor2_PMMA"
+s:Ge/DoseMonitor2_Bolts/InputFile = "Geometry/DM2_Bolts"
+s:Ge/DoseMonitor2_Bolts/FileFormat = "stl"
+s:Ge/DoseMonitor2_Bolts/Material = "Steel"
+s:Ge/DoseMonitor2_Bolts/Type="TsCAD"
+d:Ge/DoseMonitor2_Bolts/Units = 1.0 mm
+d:Ge/DoseMonitor2_Bolts/TransX=0. mm
+d:Ge/DoseMonitor2_Bolts/TransY=0. mm
+d:Ge/DoseMonitor2_Bolts/TransZ=0. mm
+d:Ge/DoseMonitor2_Bolts/RotX=0. deg
+d:Ge/DoseMonitor2_Bolts/RotY=180. deg
+d:Ge/DoseMonitor2_Bolts/RotZ=0. deg
+s:Ge/DoseMonitor2_Bolts/DrawingStyle = "Solid"
+s:Ge/DoseMonitor2_Bolts/Color= "Teal" 
+
+#~~~~~~~~~~~~~~~~~~#
+# Nozzle           #
+#~~~~~~~~~~~~~~~~~~#
+
+#-- BrassNozzle --#
+s:Ge/BrassNozzle/Parent="DeliveryBLineBox"
+s:Ge/BrassNozzle/InputFile = "Geometry/Brass Nozzle"
+s:Ge/BrassNozzle/FileFormat = "stl"
+s:Ge/BrassNozzle/Material = "Brass"
+s:Ge/BrassNozzle/Type="TsCAD"
+d:Ge/BrassNozzle/Units = 1.0 mm
+d:Ge/BrassNozzle/TransX=0. m
+d:Ge/BrassNozzle/TransY=0. m
+d:Ge/BrassNozzle/TransZ= 1681.9 mm
+d:Ge/BrassNozzle/RotX=0. deg
+d:Ge/BrassNozzle/RotY=0. deg
+d:Ge/BrassNozzle/RotZ=0. deg
+s:Ge/BrassNozzle/DrawingStyle = "FullWireframe"
+s:Ge/BrassNozzle/Color= "Orange" 
+#i:Ge/BrassNozzle/VisSegsPerCircle = 3
+
+#-- CollimatorCap --#
+s:Ge/CollimatorCap/Parent="DeliveryBLineBox"
+s:Ge/CollimatorCap/InputFile = "Geometry/Collimator Cap"
+s:Ge/CollimatorCap/FileFormat = "stl"
+s:Ge/CollimatorCap/Material = "Brass"
+s:Ge/CollimatorCap/Type="TsCAD"
+d:Ge/CollimatorCap/Units = 1.0 mm
+d:Ge/CollimatorCap/TransX=0. m
+d:Ge/CollimatorCap/TransY=0. m
+d:Ge/CollimatorCap/TransZ=0. m
+d:Ge/CollimatorCap/RotX=0. deg
+d:Ge/CollimatorCap/RotY=0. deg
+d:Ge/CollimatorCap/RotZ=0. deg
+s:Ge/CollimatorCap/DrawingStyle = "Wireframe"
+s:Ge/CollimatorCap/Color= "Olive"
+i:Ge/CollimatorCap/VisSegsPerCircle = 3
+
+## Phantom is defined in 'Scoring.txt'
+
+#-- NozzleCollimator --#
+s:Ge/NozzleCollimator/Type          = "TsCylinder"
+s:Ge/NozzleCollimator/Parent        = "DeliveryBLineBox"
+s:Ge/NozzleCollimator/Material      = "Brass"
+d:Ge/NozzleCollimator/RMin          = 0.0 mm    # Inner collimator radius
+d:Ge/NozzleCollimator/RMax          = 16.9 mm   # 34mm diameter
+d:Ge/NozzleCollimator/HL            = 4.0 mm
+d:Ge/NozzleCollimator/SPhi          = 0. deg
+d:Ge/NozzleCollimator/DPhi          = 360. deg
+d:Ge/NozzleCollimator/TransX        = 0. mm
+d:Ge/NozzleCollimator/TransY        = 0. mm
+d:Ge/NozzleCollimator/TransZ        = 1759.4 mm #10 mm #-5.0 mm - Ge/NozzleCollimator/HL  #1773.4505 mm
+s:Ge/NozzleCollimator/Color         = "navy"
+s:Ge/NozzleCollimator/DrawingStyle  = "Solid"
+i:Ge/NozzleCollimator/VisSegsPerCircle = 15
+
+
+#~~~~~~~~~~~~~~~~~~#
+# ParallelWorld    #
+#~~~~~~~~~~~~~~~~~~#
+
+s:Ge/ParallelWorld/Parent="Room"
+s:Ge/ParallelWorld/Type="TsBox" 
+s:Ge/ParallelWorld/Material="Air"
+s:Ge/ParallelWorld/Color= "lightblue" 
+d:Ge/ParallelWorld/HLX= 1. m
+d:Ge/ParallelWorld/HLY= 1. m
+d:Ge/ParallelWorld/HLZ= 4200 mm
+d:Ge/ParallelWorld/TransX=0. m
+d:Ge/ParallelWorld/TransY=0. m
+d:Ge/ParallelWorld/TransZ= 0. m 
+d:Ge/ParallelWorld/RotX=0. deg
+d:Ge/ParallelWorld/RotY=0. deg
+d:Ge/ParallelWorld/RotZ=0. deg
+i:Ge/ParallelWorld/XBins = 1
+i:Ge/ParallelWorld/YBins = 1
+i:Ge/ParallelWorld/ZBins = 1
