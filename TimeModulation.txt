@@ -1,0 +1,32 @@
+##################################
+##  Time Modulation             ##
+##  Written by J Yap 2019       ##
+##################################
+
+
+#d:Ge/Propeller/RotZ = Tf/PropellerRot/Value deg
+
+#s:Tf/PropellerRot/Function           = "Linear deg" #Step
+#d:Tf/PropellerRot/Rate               = 3.6 deg/ms
+#d:Tf/PropellerRot/StartValue         = 0.0 deg
+#d:Tf/PropellerRot/RepetitionInterval = 100.0 ms
+
+#d:Tf/TimelineStart           = 0.0 s
+#d:Tf/TimelineEnd             = 100.0 ms
+#i:Tf/NumberOfSequentialTimes = 100
+#i:Tf/Verbosity               = 2
+
+##
+#i:Sc/MyScorer/TimeBins = 10 # defaults to 0, that is, un-binned
+#d:Sc/MyScorer/TimeBinMin = 0. ns # defaults to zero
+#d:Sc/MyScorer/TimeBinMax = 100. ns
+#s:Sc/DoseAtPhantom/SplitByTimeFeature = "PropellerRotation"
+#dv:Sc/DoseAtPhantom/SplitByTimeFeatureValues = 5 0. 90. 180. 270. 360. deg
+#DoseAtPhantom-0.-90.deg
+#DoseAtPhantom-90.-180.deg
+#DoseAtPhantom-180.-270.deg
+#DoseAtPhantom-270.-360.deg
+#See exampes:
+#examples/Scoring/SplitByTimeFeature.txt
+
+#=====================================================================#
