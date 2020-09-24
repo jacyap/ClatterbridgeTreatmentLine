@@ -1,7 +1,7 @@
 # ClatterbridgeTreatmentLine
 ### TOPAS model of the Clatterbridge Cancer Centre, UK 60 MeV Ocular Proton Therapy Beamline
 
-Developed by Jacinta Yap in 2019 as part of my PhD with the University of Liverpool & Cockcroft Institute (jacinta.yap@liverpool.ac.uk)
+Developed by Jacinta Yap in 2019 as part of my PhD with the University of Liverpool & Cockcroft Institute, UK (jacinta.yap@liverpool.ac.uk)
 
 This repository contains the following:
 
@@ -15,8 +15,9 @@ This repository contains the following:
 The model itself can be run with the default settings defined in the parameter files. The visualisation should generate the following:
 
 ![Beamline in TOPAS](https://github.com/jacyap/ClatterbridgeTreatmentLine/blob/master/Beamline_def.png)
+The beam source (purple box at far left), abitrary phase space scorer (red box) and water phantom (blue box) are also included and shown.
 
-Note:
+### Note:
 - TOPAS is a MC wrap around/extension of Geant4 specifically for Proton Therapy applications. The accessibility of the code depends on licensing conditions, to download, check the website: https://sites.google.com/a/topasmc.org/home/home
 - Documentation on how to use TOPAS can be found on: https://topas.readthedocs.io/en/latest/getting-started/intro.html
 
