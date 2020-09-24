@@ -16,7 +16,7 @@ i:Ts/MaxInterruptedHistories = 1000
 
 includeFile = Materials.txt
 
-# Run > Materials > BeamSource > Geometry > Visualiser > Scoring > ParallelScoring >/> FilmScoring
+# Run > Materials > BeamSource > Geometry > Visualiser > Scoring > FilmScoring / ParallelScoring / TimeModulation
                                           
 #=====================================================================#
 #  Definitions  
