@@ -12,7 +12,7 @@ This repository contains the following:
 - **Analysis scripts**
   - Written in Matlab to plot comparisons of dose, LET curves and tranverse beam profiles.
 
-The model itself can be run immediately (with 100,000 histories) using the default settings defined in the parameter files. The visualiser is automatically turned off in this case however when *MyViewer* is initiated, should generate the following:
+The model itself can be run immediately (with 100,000 histories) using the default settings defined in the parameter files. The visualiser is automatically turned off in this case however, the following should be generated when *MyViewer* is initiated:
 
 ![Beamline in TOPAS](https://github.com/jacyap/ClatterbridgeTreatmentLine/blob/master/Beamline_def.png)
 The beam source (purple box at far left), an abitrary phase space scorer (red box) and a water phantom (blue box) are also included and shown.
