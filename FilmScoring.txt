@@ -35,82 +35,82 @@
 
 s:Sc/FluxF1/Quantity                    = "DoseToMedium" #"PhaseSpace"
 b:Sc/FluxF1/OutputToConsole             = "False"
-s:Sc/FluxF1/Component                     = "F1"
+s:Sc/FluxF1/Component                   = "F1"
 s:Sc/FluxF1/OutputType                  = "csv"
 s:Sc/FluxF1/OutputFile                  = "Data/Film/F1"
 i:Sc/FluxF1/OutputBufferSize            = 10000
 s:Sc/FluxF1/IfOutputFileAlreadyExists   = "Overwrite"
-#s:Sc/FluxF1/OnlyIncludeParticlesGoing   = "In"
+#s:Sc/FluxF1/OnlyIncludeParticlesGoing  = "In"
 #sv:Sc/FluxF1/OnlyIncludeParticlesNamed = 1 "Proton"
 
 s:Sc/FluxF2/Quantity                    = "DoseToMedium" #"PhaseSpace"
 b:Sc/FluxF2/OutputToConsole             = "False"
-s:Sc/FluxF2/Component                     = "F2"
+s:Sc/FluxF2/Component                   = "F2"
 s:Sc/FluxF2/OutputType                  = "csv"
 s:Sc/FluxF2/OutputFile                  = "Data/Film/F2"
 i:Sc/FluxF2/OutputBufferSize            = 10000
 s:Sc/FluxF2/IfOutputFileAlreadyExists   = "Overwrite"
-#s:Sc/FluxF2/OnlyIncludeParticlesGoing   = "In"
+#s:Sc/FluxF2/OnlyIncludeParticlesGoing  = "In"
 #sv:Sc/FluxF2/OnlyIncludeParticlesNamed = 1 "Proton"
 
 s:Sc/FluxF3/Quantity                    = "DoseToMedium" #"PhaseSpace"
 b:Sc/FluxF3/OutputToConsole             = "False"
-s:Sc/FluxF3/Component                     = "F3"
+s:Sc/FluxF3/Component                   = "F3"
 s:Sc/FluxF3/OutputType                  = "csv"
 s:Sc/FluxF3/OutputFile                  = "Data/Film/F3"
 i:Sc/FluxF3/OutputBufferSize            = 10000
 s:Sc/FluxF3/IfOutputFileAlreadyExists   = "Overwrite"
-#s:Sc/FluxF3/OnlyIncludeParticlesGoing   = "In"
+#s:Sc/FluxF3/OnlyIncludeParticlesGoing  = "In"
 #sv:Sc/FluxF3/OnlyIncludeParticlesNamed = 1 "Proton"
 
 s:Sc/FluxF6/Quantity                    = "DoseToMedium" #"PhaseSpace"
 b:Sc/FluxF6/OutputToConsole             = "False"
-s:Sc/FluxF6/Component                     = "F6"
+s:Sc/FluxF6/Component                   = "F6"
 s:Sc/FluxF6/OutputType                  = "csv"
 s:Sc/FluxF6/OutputFile                  = "Data/Film/F6"
 i:Sc/FluxF6/OutputBufferSize            = 10000
 s:Sc/FluxF6/IfOutputFileAlreadyExists   = "Overwrite"
-#s:Sc/FluxF6/OnlyIncludeParticlesGoing   = "In"
+#s:Sc/FluxF6/OnlyIncludeParticlesGoing  = "In"
 #sv:Sc/FluxF6/OnlyIncludeParticlesNamed = 1 "Proton"
 
 s:Sc/FluxF4/Quantity                    = "DoseToMedium" #"PhaseSpace"
 b:Sc/FluxF4/OutputToConsole             = "False"
-s:Sc/FluxF4/Component                     = "F4"
+s:Sc/FluxF4/Component                   = "F4"
 s:Sc/FluxF4/OutputType                  = "csv"
 s:Sc/FluxF4/OutputFile                  = "Data/Film/F4"
 i:Sc/FluxF4/OutputBufferSize            = 10000
 s:Sc/FluxF4/IfOutputFileAlreadyExists   = "Overwrite"
-#s:Sc/FluxF4/OnlyIncludeParticlesGoing   = "In"
+#s:Sc/FluxF4/OnlyIncludeParticlesGoing  = "In"
 #sv:Sc/FluxF4/OnlyIncludeParticlesNamed = 1 "Proton"
 
 s:Sc/FluxF8/Quantity                    = "DoseToMedium" #"PhaseSpace"
 b:Sc/FluxF8/OutputToConsole             = "False"
-s:Sc/FluxF8/Component                     = "F8"
+s:Sc/FluxF8/Component                   = "F8"
 s:Sc/FluxF8/OutputType                  = "csv"
 s:Sc/FluxF8/OutputFile                  = "Data/Film/F8"
 i:Sc/FluxF8/OutputBufferSize            = 10000
 s:Sc/FluxF8/IfOutputFileAlreadyExists   = "Overwrite"
-#s:Sc/FluxF8/OnlyIncludeParticlesGoing   = "In"
+#s:Sc/FluxF8/OnlyIncludeParticlesGoing  = "In"
 #sv:Sc/FluxF8/OnlyIncludeParticlesNamed = 1 "Proton"
 
 s:Sc/FluxF5/Quantity                    = "DoseToMedium" #"PhaseSpace"
 b:Sc/FluxF5/OutputToConsole             = "False"
-s:Sc/FluxF5/Component                     = "F5"
+s:Sc/FluxF5/Component                   = "F5"
 s:Sc/FluxF5/OutputType                  = "csv"
 s:Sc/FluxF5/OutputFile                  = "Data/Film/F5"
 i:Sc/FluxF5/OutputBufferSize            = 10000
 s:Sc/FluxF5/IfOutputFileAlreadyExists   = "Overwrite"
-#s:Sc/FluxF5/OnlyIncludeParticlesGoing   = "In"
+#s:Sc/FluxF5/OnlyIncludeParticlesGoing  = "In"
 #sv:Sc/FluxF5/OnlyIncludeParticlesNamed = 1 "Proton"
 
 s:Sc/FluxF7/Quantity                    = "DoseToMedium" #"PhaseSpace"
 b:Sc/FluxF7/OutputToConsole             = "False"
-s:Sc/FluxF7/Component                     = "F7"
+s:Sc/FluxF7/Component                   = "F7"
 s:Sc/FluxF7/OutputType                  = "csv"
 s:Sc/FluxF7/OutputFile                  = "Data/Film/F7"
 i:Sc/FluxF7/OutputBufferSize            = 10000
 s:Sc/FluxF7/IfOutputFileAlreadyExists   = "Overwrite"
-#s:Sc/FluxF7/OnlyIncludeParticlesGoing   = "In"
+#s:Sc/FluxF7/OnlyIncludeParticlesGoing  = "In"
 #sv:Sc/FluxF7/OnlyIncludeParticlesNamed = 1 "Proton"
 
 #~~~~~~~~~~~~~~~~~~#
