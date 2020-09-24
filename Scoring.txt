@@ -14,11 +14,8 @@
 #b:Ge/Phantom/Include   = "False"
 #b:Ge/Phantom/Invisible = "True" 
 
-#b:Ge/PhaseSpaceNozzle/Include    = "False"
+#b:Ge/PhaseSpaceNozzle/Include   = "False"
 #b:Ge/PhaseSpaceNozzle/Invisible = "True" 
-
-b:Ge/PhaseSpaceZ/Include = "False" 
-b:Ge/PhaseSpaceZ/Invisible = "True" 
 
 #-- ParallelWorld --#
 #!! Have to turn it off to score in the mass world and otherwise scores nothing in mass world
@@ -36,7 +33,7 @@ b:Ge/ParallelWorld/Include = "False"
 # Scorers                  #
 #~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
-#b:Sc/CheckHits/Active                   = "True" # To quickly check if there's hits
+#b:Sc/CheckHits/Active                    = "True" # To quickly check if there's hits
 #s:Sc/CheckHits/Quantity                  = "Fluence"
 #s:Sc/CheckHits/Component                 = "PhaseSpaceNozzle"
 #b:Sc/CheckHits/OutputToConsole           = "TRUE"
@@ -111,17 +108,3 @@ s:Ge/PhaseSpaceNozzle/DrawingStyle  = "Wireframe"
 i:Ge/PhaseSpaceNozzle/RBins         = 1
 i:Ge/PhaseSpaceNozzle/PhiBins       = 1
 i:Ge/PhaseSpaceNozzle/ZBins         = 1
-
-#-- Phase Space at Z --#
-s:Ge/PhaseSpaceZ/Type          = "TsBox"
-s:Ge/PhaseSpaceZ/Parent        = "DeliveryBLineBox"
-s:Ge/PhaseSpaceZ/Material      = "LiPCD" #"Lucite"
-d:Ge/PhaseSpaceZ/HLX          = 20.0 mm
-d:Ge/PhaseSpaceZ/HLY          = 20.0 mm
-d:Ge/PhaseSpaceZ/HLZ          = 14.0 um # EBT3, 27 um sensitive volume, 287 um total
-d:Ge/PhaseSpaceZ/TransZ        =  2069 mm #1769 mm #1884 mm
-s:Ge/PhaseSpaceZ/Color         = "pink"
-s:Ge/PhaseSpaceZ/DrawingStyle  = "Solid"
-i:Ge/PhaseSpaceZ/XBins         = 400
-i:Ge/PhaseSpaceZ/YBins         = 1
-i:Ge/PhaseSpaceZ/ZBins         = 1
