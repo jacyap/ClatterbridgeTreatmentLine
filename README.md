@@ -12,7 +12,9 @@ This repository contains the following:
 - Analysis scripts
   - Written in Matlab to plot comparisons of dose, LET curves and tranverse beam profiles.
 
-![Beamline photo](jacyap/ClatterbridgeTreatmentLine/blob/master/Beamline_def.png)
+The model itself can be run with the default settings defined in the parameter files. The visualisation should generate the following:
+
+![Beamline in TOPAS](https://github.com/jacyap/ClatterbridgeTreatmentLine/blob/master/Beamline_def.png)
 
 Note:
 - TOPAS is a MC wrap around/extension of Geant4 specifically for Proton Therapy applications. The accessibility of the code depends on licensing conditions, to download, check the website: https://sites.google.com/a/topasmc.org/home/home
