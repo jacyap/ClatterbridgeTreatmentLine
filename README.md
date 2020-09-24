@@ -1,5 +1,5 @@
 # ClatterbridgeTreatmentLine
-### TOPAS model of the Clatterbridge Cancer Centre, UK 60 MeV Ocular Proton Therapy Beamline
+### TOPAS model of the 60 MeV Ocular Proton Therapy Beamline at the Clatterbridge Cancer Centre (CCC), United Kingdom 
 
 Developed by Jacinta Yap in 2019 as part of my PhD with the University of Liverpool & Cockcroft Institute, UK (jacinta.yap@liverpool.ac.uk)
 
@@ -24,3 +24,8 @@ The model itself can be run immediately (with 100,000 histories) using the defau
 Further information and documentation about the model itself will soon be available on: http://www.hep.ucl.ac.uk/pbt/wiki/Clatterbridge/TOPAS
 
 For now, more details can be found about a previous Geant4 model on: http://www.hep.ucl.ac.uk/pbt/wiki/Clatterbridge/Geant4
+
+**Further information about the facility can be found in:**
+1. A. Kacperek, “Protontherapy of eye tumours in the UK: A review of treatment at
+Clatterbridge,” Applied Radiation and Isotopes, vol. 67, no. 3, pp. 378–386, 2009. https://doi.org/10.1016/j.apradiso.2008.06.012
+2. J. Yap et al., “Beam characterisation studies of the 62 MeV proton therapy beamline at the Clatterbridge Cancer Centre,” Physica Medica, vol. 77, no. January, pp. 108– 120, 2020. https://doi.org/10.1016/j.ejmp.2020.08.002
