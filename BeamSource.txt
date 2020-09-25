@@ -5,9 +5,6 @@
 
 includeFile = Geometry/Geometry.txt
 
-#b:Sc/Beam/Active                         = "False"
-b:Sc/BeamSourceTwiss/Active                         = "False"
-
 s:So/BeamSource/Type                     = "Beam"
 s:So/BeamSource/Component                = "BeamPosition"
 s:So/BeamSource/BeamParticle             = "proton"
@@ -71,17 +68,3 @@ d:Ge/PlaneAtBeamPosition/RotY      = 0. deg
 d:Ge/PlaneAtBeamPosition/RotZ      = 0. deg
 s:Ge/PlaneAtBeamPosition/Color= "Purple" 
 s:Ge/PlaneAtBeamPosition/DrawingStyle = "Solid" 
-
-#-- Phase space scoring at Beam Source Plane --#
-s:Sc/Beam/Quantity                  = "PhaseSpace"
-b:Sc/Beam/OutputToConsole           = "True"
-s:Sc/Beam/Surface                   = "PlaneAtBeamPosition/ZPlusSurface"
-s:Sc/Beam/OutputType                = "ASCII"
-i:Sc/Beam/OutputBufferSize          = 100
-b:Sc/Beam/IncludeRunID              = "True"
-b:Sc/Beam/IncludeEventID            = "True"
-b:Sc/Beam/IncludeTrackID            = "True"
-b:Sc/Beam/IncludeTime               = "True"
-b:Sc/Beam/IncludeSeed               = "True"
-s:Sc/Beam/IfOutputFileAlreadyExists = "Overwrite"
-s:Sc/Beam/OutputFile                = "BeamOutput"
