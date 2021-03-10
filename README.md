@@ -28,6 +28,7 @@ The simulation itself can be run immediately (with 100,000 histories) using the 
 ### Note:
 - TOPAS is a MC wrap around/extension of Geant4 specifically for Proton Therapy applications. The accessibility of the code depends on licensing conditions. To download, check the website: https://sites.google.com/a/topasmc.org/home/home
 - Documentation on how to use TOPAS can be found on: https://topas.readthedocs.io/en/latest/getting-started/intro.html
+- Simulations were performed with TOPAS version 3.2.p1 for this PhD work
 
 Further information and documentation about the model will soon be available on: http://www.hep.ucl.ac.uk/pbt/wiki/Clatterbridge/TOPAS
 
