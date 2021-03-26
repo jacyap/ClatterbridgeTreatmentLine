@@ -16,10 +16,10 @@ includeFile = Visualiser.txt
 
 #~~~~~~~~~~~~~~~~~~#
 # Remove or hide components quickly 
-# (#components included)
+# (#components = included)
 #~~~~~~~~~~~~~~~~~~#
 
-#b:Ge/World/Invisible = "True"
+b:Ge/World/Invisible = "True"
 b:Ge/Room/Invisible = "True" 
 b:Ge/RoomWall/Invisible = "True" 
 #b:Ge/DeliveryBLineBox/Include = "False"
@@ -69,26 +69,26 @@ b:Ge/PropellerCentre/Invisible = "True"
 #b:Ge/AlCollimator/Invisible = "True" 
 
 #-- Dose Monitors --#
-#b:Ge/DoseMonitor1_PMMA/Include = "False"
+b:Ge/DoseMonitor1_PMMA/Include = "False"
 #b:Ge/DoseMonitor1_PMMA/Invisible = "True" 
-#b:Ge/DoseMonitor1_MylarFoils/Include = "False"
+b:Ge/DoseMonitor1_MylarFoils/Include = "False"
 #b:Ge/DoseMonitor1_MylarFoils/Invisible = "True" 
-#b:Ge/DoseMonitor1_AlFoils/Include = "False"
+b:Ge/DoseMonitor1_AlFoils/Include = "False"
 #b:Ge/DoseMonitor1_AlFoils/Invisible = "True" 
-#b:Ge/DoseMonitor1_GuardRing/Include = "False"
+b:Ge/DoseMonitor1_GuardRing/Include = "False"
 #b:Ge/DoseMonitor1_GuardRing/Invisible = "True"
-#b:Ge/DoseMonitor1_Bolts/Include = "False"
+b:Ge/DoseMonitor1_Bolts/Include = "False"
 #b:Ge/DoseMonitor1_Bolts/Invisible = "True" 
 
-#b:Ge/DoseMonitor2_PMMA/Include = "False"
+b:Ge/DoseMonitor2_PMMA/Include = "False"
 #b:Ge/DoseMonitor2_PMMA/Invisible = "True" 
-#b:Ge/DoseMonitor2_MylarFoils/Include = "False"
+b:Ge/DoseMonitor2_MylarFoils/Include = "False"
 #b:Ge/DoseMonitor2_MylarFoils/Invisible = "True" 
-#b:Ge/DoseMonitor2_AlFoils/Include = "False"
+b:Ge/DoseMonitor2_AlFoils/Include = "False"
 #b:Ge/DoseMonitor2_AlFoils/Invisible = "True" 
-#b:Ge/DoseMonitor2_GuardRing/Include = "False"
+b:Ge/DoseMonitor2_GuardRing/Include = "False"
 #b:Ge/DoseMonitor2_GuardRing/Invisible = "True"
-#b:Ge/DoseMonitor2_Bolts/Include = "False"
+b:Ge/DoseMonitor2_Bolts/Include = "False"
 #b:Ge/DoseMonitor2_Bolts/Invisible = "True" 
 
 #-- Nozzle --#
@@ -116,7 +116,7 @@ s:Ge/Room/Material="Air"
 
 d:Ge/Room/HLX= 4. m
 d:Ge/Room/HLY= 2. m
-d:Ge/Room/HLZ= 5. m
+d:Ge/Room/HLZ= 6. m
 d:Ge/Room/TransX=0. m
 d:Ge/Room/TransY=0. m
 d:Ge/Room/TransZ=0. m 
@@ -138,7 +138,7 @@ d:Ge/RoomWall/HLY= Ge/DeliveryBLineBox/HLY - 0.5 mm
 d:Ge/RoomWall/HLZ= 10. cm
 d:Ge/RoomWall/TransX=0. m
 d:Ge/RoomWall/TransY=0. m
-d:Ge/RoomWall/TransZ= -0.05 mm - Ge/RoomWall/HLZ 
+d:Ge/RoomWall/TransZ= -1.0 mm - Ge/RoomWall/HLZ 
 d:Ge/RoomWall/RotX=0. deg
 d:Ge/RoomWall/RotY=0. deg
 d:Ge/RoomWall/RotZ=0. deg
@@ -550,7 +550,7 @@ s:Ge/DoseMonitor1_MylarFoils/InputFile = "Geometry/DM1_MylarFoils"
 s:Ge/DoseMonitor1_MylarFoils/FileFormat = "stl"
 s:Ge/DoseMonitor1_MylarFoils/Material = "Mylar"
 s:Ge/DoseMonitor1_MylarFoils/Type="TsCAD"
-d:Ge/DoseMonitor1_MylarFoils/Units = 1.0 mm
+d:Ge/DoseMonitor1_MylarFoils/Units = 0.9 mm
 d:Ge/DoseMonitor1_MylarFoils/TransX=0. mm
 d:Ge/DoseMonitor1_MylarFoils/TransY=0. m
 d:Ge/DoseMonitor1_MylarFoils/TransZ=0. mm
@@ -629,7 +629,7 @@ s:Ge/DoseMonitor2_MylarFoils/InputFile = "Geometry/DM2_MylarFoils"
 s:Ge/DoseMonitor2_MylarFoils/FileFormat = "stl"
 s:Ge/DoseMonitor2_MylarFoils/Material = "Mylar"
 s:Ge/DoseMonitor2_MylarFoils/Type="TsCAD"
-d:Ge/DoseMonitor2_MylarFoils/Units = 1.0 mm
+d:Ge/DoseMonitor2_MylarFoils/Units = 0.9 mm
 d:Ge/DoseMonitor2_MylarFoils/TransX=0. mm
 d:Ge/DoseMonitor2_MylarFoils/TransY=0. m
 d:Ge/DoseMonitor2_MylarFoils/TransZ=0. mm
