@@ -25,7 +25,7 @@ i:Gr/MyViewer/WindowPosY  = 0
 #s:Gr/MyViewer/AxesComponent = "Propeller"
 
 ##-- Angled whole beamline --#
-u:Gr/MyViewer/Zoom = 16 #entire beamline
+u:Gr/MyViewer/Zoom = 1 #entire beamline
 s:Gr/MyViewer/CenterOn = "AlTube2"
 d:Gr/MyViewer/Theta       = -50. deg 
 d:Gr/MyViewer/Phi         = -15. deg
