@@ -6,6 +6,7 @@
 #-- Phantom & Scoring --#
 includeFile = Scoring.txt
 
+#-- Viewer --#
 s:Gr/MyViewer/Type        = "OpenGL"
 i:Gr/MyViewer/WindowSizeX = 1024
 i:Gr/MyViewer/WindowSizeY = 768
