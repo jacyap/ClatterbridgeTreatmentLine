@@ -22,7 +22,17 @@ d:So/BeamSource/BeamAngularCutoffY       = 1.2 mrad
 d:So/BeamSource/BeamAngularSpreadX       = 0.002 mrad #2.3 mrad
 d:So/BeamSource/BeamAngularSpreadY       = 0.001 mrad #1.2 mrad
 
-## TWISS ## !! Need to switch i:So/ for histories in Run.txt to use Twiss Parameters
+#-- PhaseSpaceFile --#
+# If you want to generate histories from a PhaseSpaceFile, switch i:So/BeamSource to i:So/BeamSourcePhase
+s:So/BeamSourcePhase/Type = "PhaseSpace"
+i:So/BeamSourcePhase/PhaseSpaceMultipleUse = 0 	# if 0, number of histories is defined by Run.txt line 7, otherwise this is the number of times the phasespace file is reused
+s:So/BeamSourcePhase/Component = "BeamPosition"
+s:So/BeamSourcePhase/PhaseSpaceFileName = "PhaseSpaceNozzle_1M"
+b:So/BeamSourcePhase/PhaseSpaceIncludeEmptyHistories = "False"
+b:So/BeamSourcePhase/PhaseSpacePreCheck = "True"
+
+#-- TWISS --# 
+## Need to switch i:So/BeamSource to BeamSourceTwiss in Run.txt to use Twiss Parameters
 s:So/BeamSourceTwiss/Distribution = "twiss_gaussian"
 u:So/BeamSourceTwiss/AlphaX = 5.29402
 d:So/BeamSourceTwiss/BetaX  = 48.73517 m

@@ -4,7 +4,7 @@
 ##################################
 
 #-- Turn off quickly --#
-i:So/BeamSource/NumberOfHistoriesInRun   = 50000
+i:So/BeamSource/NumberOfHistoriesInRun   = 100000 	# switch input beam source here
 b:Gr/MyViewer/Active = "False"
 #b:Ts/UseQt = "True"
 i:Ts/TrackingVerbosity = 0
@@ -43,4 +43,3 @@ b:Ts/ShowHistoryCountOnSingleLine = "False"
 
 b:Ts/ShowCPUTime = "True"
 #i:Ts/RunIDPadding = 1
-
