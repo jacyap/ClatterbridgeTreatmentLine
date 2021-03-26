@@ -4,8 +4,9 @@
 ##################################
 
 #-- Turn off quickly --#
-i:So/BeamSource/NumberOfHistoriesInRun   = 100000
+i:So/BeamSource/NumberOfHistoriesInRun   = 50000
 b:Gr/MyViewer/Active = "False"
+#b:Ts/UseQt = "True"
 i:Ts/TrackingVerbosity = 0
 i:Ts/EventVerbosity = 0
 i:Ts/MaxInterruptedHistories = 1000
