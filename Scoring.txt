@@ -17,6 +17,9 @@
 #b:Ge/PhaseSpaceNozzle/Include   = "False"
 #b:Ge/PhaseSpaceNozzle/Invisible = "True" 
 
+#b:Ge/PhaseSpaceSource/Include   = "False"
+#b:Ge/PhaseSpaceSource/Invisible = "True" 
+
 #-- ParallelWorld --#
 #!! Have to turn it off to score in the mass world and otherwise scores nothing in mass world
 b:Ge/ParallelWorld/Include = "False"
@@ -25,9 +28,11 @@ b:Ge/ParallelWorld/Include = "False"
 # Turn off scorers easily  #
 #~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
-#b:Sc/DoseProfile/Active                   = "False"
-#b:Sc/LETdProfile/Active                   = "False"
-#b:Sc/LETtProfile/Active                   = "False"
+b:Sc/DoseProfile/Active                   = "False"
+b:Sc/LETdProfile/Active                   = "False"
+b:Sc/LETtProfile/Active                   = "False"
+b:Sc/PhaseNozzle/Active                   = "False"
+#b:Sc/PhaseSpaceSource/Active                   = "False"
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~#
 # Scorers                  #
@@ -45,10 +50,19 @@ b:Sc/PhaseNozzle/OutputToConsole             = "False"
 s:Sc/PhaseNozzle/Surface                     = "PhaseSpaceNozzle/ZMinusSurface"
 s:Sc/PhaseNozzle/OutputType                  = "ASCII"
 s:Sc/PhaseNozzle/OutputFile                  = "Data/PhaseSpaceNozzle"
-i:Sc/PhaseNozzle/OutputBufferSize            = 10000
+i:Sc/PhaseNozzle/OutputBufferSize            = 1000
 s:Sc/PhaseNozzle/IfOutputFileAlreadyExists   = "Overwrite"
-s:Sc/PhaseNozzle/OnlyIncludeParticlesGoing   = "In"
+#s:Sc/PhaseNozzle/OnlyIncludeParticlesGoing   = "Out"
 sv:Sc/PhaseNozzle/OnlyIncludeParticlesNamed = 1 "Proton"
+
+s:Sc/PhaseSource/Quantity                    = "PhaseSpace"
+b:Sc/PhaseSource/OutputToConsole             = "False"
+s:Sc/PhaseSource/Surface                     = "PhaseSpaceSource/ZPlusSurface" 
+s:Sc/PhaseSource/OutputType                  = "ASCII"
+s:Sc/PhaseSource/OutputFile                  = "Data/PhaseSpaceSource"
+i:Sc/PhaseSource/OutputBufferSize            = 1000
+s:Sc/PhaseSource/IfOutputFileAlreadyExists   = "Overwrite"
+sv:Sc/PhaseSource/OnlyIncludeParticlesNamed = 1 "Proton"
 
 s:Sc/DoseProfile/Quantity                  = "DoseToWater"
 s:Sc/DoseProfile/Component                 = "Phantom"
@@ -108,3 +122,20 @@ s:Ge/PhaseSpaceNozzle/DrawingStyle  = "Wireframe"
 i:Ge/PhaseSpaceNozzle/RBins         = 1
 i:Ge/PhaseSpaceNozzle/PhiBins       = 1
 i:Ge/PhaseSpaceNozzle/ZBins         = 1
+
+#-- Phase Space after Beam source --#
+s:Ge/PhaseSpaceSource/Type          = "TsCylinder"
+s:Ge/PhaseSpaceSource/Parent        = "DeliveryBLineBox"
+s:Ge/PhaseSpaceSource/Material      = "Vacuum"
+d:Ge/PhaseSpaceSource/RMin           = 0 mm
+d:Ge/PhaseSpaceSource/RMax           = 35 mm
+d:Ge/PhaseSpaceSource/HL           = 0.1 nm
+d:Ge/PhaseSpaceSource/TransX        = 0. m
+d:Ge/PhaseSpaceSource/TransY        = 0. m
+d:Ge/PhaseSpaceSource/TransZ        = 0. m
+s:Ge/PhaseSpaceSource/Color         = "pink"
+s:Ge/PhaseSpaceSource/DrawingStyle  = "FullWireFrame"
+i:Ge/PhaseSpaceSource/RBins         = 1
+i:Ge/PhaseSpaceSource/PhiBins       = 1
+i:Ge/PhaseSpaceSource/ZBins         = 1
+i:Ge/PhaseSpaceSource/VisSegsPerCircle = 10
