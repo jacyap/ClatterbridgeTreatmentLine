@@ -5,6 +5,8 @@
 
 includeFile = Geometry/Geometry.txt
 
+## Default option is BeamSource. Particle source can also be generated from a PhaseSpace and emittance source. 
+
 s:So/BeamSource/Type                     = "Beam"
 s:So/BeamSource/Component                = "BeamPosition"
 s:So/BeamSource/BeamParticle             = "proton"
@@ -23,7 +25,7 @@ d:So/BeamSource/BeamAngularSpreadX       = 0.002 mrad #2.3 mrad
 d:So/BeamSource/BeamAngularSpreadY       = 0.001 mrad #1.2 mrad
 
 #-- PhaseSpaceFile --#
-# If you want to generate histories from a PhaseSpaceFile, switch i:So/BeamSource to i:So/BeamSourcePhase
+## If you want to generate histories from a PhaseSpaceFile, in Run.txt, switch i:So/BeamSource to i:So/BeamSourcePhase
 s:So/BeamSourcePhase/Type = "PhaseSpace"
 i:So/BeamSourcePhase/PhaseSpaceMultipleUse = 0 	# if 0, number of histories is defined by Run.txt line 7, otherwise this is the number of times the phasespace file is reused
 s:So/BeamSourcePhase/Component = "BeamPosition"
@@ -45,7 +47,7 @@ u:So/BeamSourceTwiss/ParticleFractionY = 0.683
 
 #sv:Ph/Default/Modules = 1 "g4em-standard_opt0" 
 sv:Ph/Default/Modules = 2 "g4em-standard_opt3" "g4h-phy_QGSP_BIC_HP" #"g4em-standard_opt0"
-##s:Ph/Default/Type = "QGSP_BIC_HP" #"QGSP_BERT_HP" #"QGSP_BIC_EMY" 
+#s:Ph/Default/Type = "QGSP_BIC_HP" #"QGSP_BERT_HP" #"QGSP_BIC_EMY" 
 #d:Ph/Default/CutForAllParticles = 0.05 mm
 d:Ph/Default/CutForElectron = 0.01 mm 
 d:Ph/Default/CutForProton = 0.01 mm 
