@@ -27,6 +27,7 @@ b:Ge/DeliveryBLineBox/Invisible = "True"
 #b:Ge/PlasticShielding/Include = "False"
 b:Ge/PlasticShielding/Invisible = "True" 
 b:Ge/PlaneAtBeamPosition/Invisible = "True" 
+b:Ge/PlaneAtBeamPosition/Include = "False" 
 
 #-- Parallel World--#
 # Amend in ParallelScoring.txt
@@ -41,7 +42,7 @@ b:Ge/PlaneAtBeamPosition/Invisible = "True"
 #b:Ge/BrassStopper/Include = "False"
 #b:Ge/BrassStopper/Invisible = "True" 
 #b:Ge/KaptonWindow/Include = "False"
-#b:Ge/ScatteringTubeVacuum/Include = "False"
+b:Ge/ScatteringTubeVacuum/Include = "False"
 b:Ge/ScatteringTubeVacuum/Invisible = "True" 
 
 #-- Modulation Box --#
