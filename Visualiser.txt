@@ -17,7 +17,7 @@ i:Gr/MyViewer/WindowPosY  = 0
 # Viewing options
 #=====================================================================#
 
-#u:Gr/MyViewer/Zoom = 70 #50 #17  #150.
+#u:Gr/MyViewer/Zoom = 20 #50 #17  #150.
 #s:Gr/MyViewer/CenterOn = "Phantom" #"AlTube2" #"PhaseSpaceZ" #"BrassStopper" #"TungstenWireH" #"Propeller" #"BrassNozzle" #"DoseMonitor1_Bolts" #
 #d:Gr/MyViewer/Theta       = -80 deg #-50. deg 
 #d:Gr/MyViewer/Phi         = 15. deg
