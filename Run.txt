@@ -4,7 +4,7 @@
 ##################################
 
 #-- Turn off quickly --#
-i:So/BeamSource/NumberOfHistoriesInRun   = 50000  # switch input beam source here
+i:So/BeamSource/NumberOfHistoriesInRun   = 100000  # switch input beam source here
 b:Gr/MyViewer/Active = "False"
 #b:Ts/UseQt = "True"    # MyViewer must be active for visualisation
 i:Ts/TrackingVerbosity = 0
