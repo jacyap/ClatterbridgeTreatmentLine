@@ -1,7 +1,8 @@
 # ClatterbridgeTreatmentLine
 ### TOPAS model of the 60 MeV Ocular Proton Therapy Beamline at the Clatterbridge Cancer Centre (CCC), Wirral, United Kingdom 
 
-Developed by Jacinta Yap in 2019 as part of my PhD with the University of Liverpool & Cockcroft Institute, UK (jacinta.yap@liverpool.ac.uk)
+Developed by Jacinta Yap in 2019 as part of my PhD with the University of Liverpool & Cockcroft Institute, UK (jacinta.yap@liverpool.ac.uk).
+Updated March 2021 for compatibility with TOPAS v3.6.1.
 
 This repository contains the following:
 
@@ -12,7 +13,7 @@ This repository contains the following:
 - **Analysis scripts**
   - Written in Matlab to plot comparisons of dose, LET curves and tranverse beam profiles. Located in *Data* folder.
 
-The simulation itself can be run immediately (with 100,000 histories) using the default settings defined in the parameter files. The visualiser is automatically turned off in this case. However, when *MyViewer* is initiated, the following should be generated:
+The simulation itself can be run immediately (with 100,000 histories) using the default settings defined in the parameter files. PhaseSpace files have also been provided from the origin (PhaseSpaceSource.phsp) and after the nozzle (PhaseSpaceNozzle_1M.phsp). When *MyViewer* and *Qt* is initiated, the following should be generated:
 
 ![Beamline in TOPAS](https://github.com/jacyap/ClatterbridgeTreatmentLine/blob/master/Beamline_def.png)\
 *The beam source (purple box at far left), an abitrary phase space scorer (red box) and a water phantom (blue box) are also included and shown.*
@@ -20,8 +21,8 @@ The simulation itself can be run immediately (with 100,000 histories) using the 
 ## To run:
 
 1. Clone this repository: *git clone https://github.com/jacyap/ClatterbridgeTreatmentLine.git*
-2. Set up environment: *source startup.sh*
-3. Run from the ClatterbridgeTreatmentLine directory (this depend on where your topas directory is): i.e. *../../topas Run.txt*
+2. Set up environment: *source startup.sh* (this may differ according to your OS 
+3. Run from the ClatterbridgeTreatmentLine directory (this depends on where your topas directory is): i.e. *../bin/topas Run.txt*
 
 *Scorers (Dose, LETt & LETd profiles) are turned on by default, PhysicsLists have been pre-selected, warning messages relate to the (complex) dose monitor geometry & can be ignored
 
@@ -39,4 +40,4 @@ For now, more details can be found about a previous Geant4 model on: http://www.
 Clatterbridge,” Applied Radiation and Isotopes, vol. 67, no. 3, pp. 378–386, 2009. https://doi.org/10.1016/j.apradiso.2008.06.012
 2. J. Yap et al., “Beam characterisation studies of the 62 MeV proton therapy beamline at the Clatterbridge Cancer Centre,” Physica Medica, vol. 77, no. January, pp. 108– 120, 2020. https://doi.org/10.1016/j.ejmp.2020.08.002
 
-#### *Code development for this model will cease following the completion of my PhD however sufficient information will be provided on the UCL wiki. User support will be on a minimal basis - please email if you have any questions. 
+#### *Code development for this model will cease following the completion of my PhD however sufficient information will be provided on the UCL wiki. User support will be on a minimal basis - please email if you have any questions.
