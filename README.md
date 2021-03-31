@@ -21,8 +21,10 @@ The simulation itself can be run immediately (with 100,000 histories) using the 
 ## To run:
 
 1. Clone this repository: *git clone https://github.com/jacyap/ClatterbridgeTreatmentLine.git*
-2. Set up environment: *source startup.sh* (this may differ according to your OS 
-3. Run from the ClatterbridgeTreatmentLine directory (this depends on where your topas directory is): i.e. *../bin/topas Run.txt*
+2. Set up environment: *source startup.sh* (this may differ according to your OS) 
+3. Run from the ClatterbridgeTreatmentLine directory (this depends on where your topas directory is): 
+\
+i.e. *../bin/topas Run.txt*
 
 *Scorers (Dose, LETt & LETd profiles) are turned on by default, PhysicsLists have been pre-selected, warning messages relate to the (complex) dose monitor geometry & can be ignored
 
