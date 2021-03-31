@@ -28,11 +28,11 @@ b:Ge/ParallelWorld/Include = "False"
 # Turn off scorers easily  #
 #~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
-b:Sc/DoseProfile/Active                   = "False"
+#b:Sc/DoseProfile/Active                   = "False"
 b:Sc/LETdProfile/Active                   = "False"
 b:Sc/LETtProfile/Active                   = "False"
 b:Sc/PhaseNozzle/Active                   = "False"
-#b:Sc/PhaseSpaceSource/Active                   = "False"
+b:Sc/PhaseSpaceSource/Active              = "False"
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~#
 # Scorers                  #
@@ -40,7 +40,7 @@ b:Sc/PhaseNozzle/Active                   = "False"
 
 #b:Sc/CheckHits/Active                    = "True" # To quickly check if there's hits
 #s:Sc/CheckHits/Quantity                  = "Fluence"
-#s:Sc/CheckHits/Component                 = "PhaseSpaceNozzle"
+#s:Sc/CheckHits/Component                 = "PfullhaseSpaceNozzle"
 #b:Sc/CheckHits/OutputToConsole           = "TRUE"
 #b:Sc/CheckHits/OutputAfterRun            = "FALSE" 
 #s:Sc/CheckHits/IfOutputFileAlreadyExists = "Overwrite"
@@ -127,12 +127,12 @@ i:Ge/PhaseSpaceNozzle/ZBins         = 1
 s:Ge/PhaseSpaceSource/Type          = "TsCylinder"
 s:Ge/PhaseSpaceSource/Parent        = "DeliveryBLineBox"
 s:Ge/PhaseSpaceSource/Material      = "Vacuum"
-d:Ge/PhaseSpaceSource/RMin           = 0 mm
-d:Ge/PhaseSpaceSource/RMax           = 35 mm
-d:Ge/PhaseSpaceSource/HL           = 0.1 nm
+d:Ge/PhaseSpaceSource/RMin          = 0 mm
+d:Ge/PhaseSpaceSource/RMax          = 35 mm
+d:Ge/PhaseSpaceSource/HL            = 0.1 nm
 d:Ge/PhaseSpaceSource/TransX        = 0. m
 d:Ge/PhaseSpaceSource/TransY        = 0. m
-d:Ge/PhaseSpaceSource/TransZ        = 0. m
+d:Ge/PhaseSpaceSource/TransZ        = -0.1 nm
 s:Ge/PhaseSpaceSource/Color         = "pink"
 s:Ge/PhaseSpaceSource/DrawingStyle  = "FullWireFrame"
 i:Ge/PhaseSpaceSource/RBins         = 1
