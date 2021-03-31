@@ -27,9 +27,9 @@ d:So/BeamSource/BeamAngularSpreadY       = 0.001 mrad #1.2 mrad
 #-- PhaseSpaceFile --#
 ## If you want to generate histories from a PhaseSpaceFile, in Run.txt, switch i:So/BeamSource to i:So/BeamSourcePhase
 s:So/BeamSourcePhase/Type = "PhaseSpace"
-i:So/BeamSourcePhase/PhaseSpaceMultipleUse = 0 	# if 0, number of histories is defined by Run.txt line 7, otherwise this is the number of times the phasespace file is reused
-s:So/BeamSourcePhase/Component = "BeamPosition"
-s:So/BeamSourcePhase/PhaseSpaceFileName = "PhaseSpaceNozzle_1M"
+i:So/BeamSourcePhase/PhaseSpaceMultipleUse = 0  # if 0, number of histories is defined by Run.txt line 7, otherwise this is the number of times the phasespace file is reused
+s:So/BeamSourcePhase/Component = "World" # Global coordinate system, can't assign to daughter volumes
+s:So/BeamSourcePhase/PhaseSpaceFileName = "PhaseSpaceSource_100k" #"PhaseSpaceNozzle_1M"
 b:So/BeamSourcePhase/PhaseSpaceIncludeEmptyHistories = "False"
 b:So/BeamSourcePhase/PhaseSpacePreCheck = "True"
 
@@ -60,21 +60,21 @@ s:Ge/BeamPosition/Parent="Room"
 s:Ge/BeamPosition/Type="Group"
 d:Ge/BeamPosition/TransX=0. m
 d:Ge/BeamPosition/TransY=0. m
-d:Ge/BeamPosition/TransZ= 0. m
+d:Ge/BeamPosition/TransZ=0. m #-0.1 nm #translate upstream for PhaseSpaceSource, generate at origin
 d:Ge/BeamPosition/RotX=0. deg
 d:Ge/BeamPosition/RotY=0. deg
 d:Ge/BeamPosition/RotZ=0. deg
 
-#-- To visualise Beam Box --#
+#-- To visualise Beam Position --#
 s:Ge/PlaneAtBeamPosition/Type      = "TsBox"
 s:Ge/PlaneAtBeamPosition/Material  = "Vacuum"
 s:Ge/PlaneAtBeamPosition/Parent    = "DeliveryBLineBox"
 d:Ge/PlaneAtBeamPosition/HLX       = 5 cm 
 d:Ge/PlaneAtBeamPosition/HLY       = 5 cm 
-d:Ge/PlaneAtBeamPosition/HLZ       = 0.1 nm
+d:Ge/PlaneAtBeamPosition/HLZ       = 1 um
 d:Ge/PlaneAtBeamPosition/TransX    = 0. m
 d:Ge/PlaneAtBeamPosition/TransY    = 0. m
-d:Ge/PlaneAtBeamPosition/TransZ    = -0.1 nm 
+d:Ge/PlaneAtBeamPosition/TransZ    = -0.05 um
 d:Ge/PlaneAtBeamPosition/RotX      = 0. deg
 d:Ge/PlaneAtBeamPosition/RotY      = 0. deg
 d:Ge/PlaneAtBeamPosition/RotZ      = 0. deg
