@@ -33,9 +33,7 @@ i.e. *../bin/topas Run.txt*
 - Documentation on how to use TOPAS can be found on: https://topas.readthedocs.io/en/latest/getting-started/intro.html
 - Simulations were performed with TOPAS version 3.2.p1 for this PhD work
 
->Further information and documentation about the model will soon be available on: http://www.hep.ucl.ac.uk/pbt/wiki/Clatterbridge/TOPAS
-
-For now, more details can be found about a previous Geant4 model on: http://www.hep.ucl.ac.uk/pbt/wiki/Clatterbridge/Geant4
+### Additional information and documentation about the model is available on: http://www.hep.ucl.ac.uk/pbt/wiki/Clatterbridge/TOPAS
 
 **For further description and information about the facility:**
 1. A. Kacperek, “Protontherapy of eye tumours in the UK: A review of treatment at
