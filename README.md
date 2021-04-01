@@ -13,7 +13,7 @@ This repository contains the following:
 - **Analysis scripts**
   - Written in Matlab to plot comparisons of dose, LET curves and tranverse beam profiles. Located in *Data* folder.
 
-The simulation itself can be run immediately (with 100,000 histories) using the default settings defined in the parameter files. An input PhaseSpace file (PhaseSpaceSource.phsp) has also been provided to generate a beam at the origin. When *MyViewer* and *Qt* is initiated, the following should be generated:
+The simulation itself can be run immediately (with 100,000 histories) using the default settings defined in the parameter files. An input PhaseSpace file (PhaseSpaceSource_100k.phsp) has also been provided to generate a beam at the origin. When *MyViewer* and *Qt* is initiated, the following should be generated:
 
 ![Beamline in TOPAS](https://github.com/jacyap/ClatterbridgeTreatmentLine/blob/master/Beamline_def.png)\
 *The beam source (purple box at far left), an abitrary phase space scorer (red box) and a water phantom (blue box) are also included and shown.*
