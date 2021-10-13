@@ -34,7 +34,7 @@ i.e. *../bin/topas Run.txt*
 - Simulations were performed with TOPAS version 3.2.p1 for this PhD work
 
 ### Additional information and documentation about the model is available on: http://www.hep.ucl.ac.uk/pbt/wiki/Clatterbridge/TOPAS
-#### More details are also described in my Thesis: https://livrepository.liverpool.ac.uk/3118222/
+#### More details are also described in my PhD Thesis (2021), 'Characterisation Studies of Proton Beamlines for Medical Applications and Beam Diagnostics Integration': https://livrepository.liverpool.ac.uk/3118222/ 
 \
 **For further description and information about the facility:**
 1. A. Kacperek, “Protontherapy of eye tumours in the UK: A review of treatment at
